@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.79.0" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>JVM的类加载 | sslouis</title>
+
+    <link rel="stylesheet" href="/css/meme.min.css" />
+
+    
+    
+        <script src="/js/meme.min.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="sslouis" /><meta name="description" content="一.类加载的时机 一个类型从被加载到虚拟机内存中开始，到卸载出内存位置，它的整个生命周……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="sslouis" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="sslouis" />
+    <meta name="msapplication-starturl" content="../../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://sslouis.com/tech/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2020-08-16T21:30:32+08:00",
+        "dateModified": "2020-12-22T13:29:28+08:00",
+        "url": "https://sslouis.com/tech/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/",
+        "headline": "JVM的类加载",
+        "description": "一.类加载的时机 一个类型从被加载到虚拟机内存中开始，到卸载出内存位置，它的整个生命周……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "tech",
+        "wordCount":  2500 ,
+        "image": "https://sslouis.com/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Viva La Vida",
+            "email": "sslouis22@gmail.com",
+            "image": "https://sslouis.com/icons/apple-touch-icon.png",
+            "url": "https://www.sslouis.com/",
+            "name": "sslouis"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "sslouis",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://sslouis.com/icons/apple-touch-icon.png"
+            },
+            "url": "https://sslouis.com/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://sslouis.com/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@reuixiy" />
+
+    
+
+
+
+<meta property="og:title" content="JVM的类加载" />
+<meta property="og:description" content="一.类加载的时机 一个类型从被加载到虚拟机内存中开始，到卸载出内存位置，它的整个生命周……" />
+<meta property="og:url" content="https://sslouis.com/tech/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" />
+<meta property="og:site_name" content="sslouis" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://sslouis.com/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-08-16T21:30:32&#43;08:00" />
+    <meta property="article:modified_time" content="2020-12-22T13:29:28&#43;08:00" />
+    
+    <meta property="article:section" content="tech" />
+
+
+        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+
+        
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100434861-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-100434861-1');
+    </script>
+
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">sslouis</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/life/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">生活</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tech/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">技术</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="tech" data-toc-num="true">
+
+            <h1 class="post-title p-name">JVM的类加载</h1>
+
+            
+
+            
+                
+            
+
+            
+
+            <div class="post-body e-content">
+              <h3 id="一类加载的时机"><a href="#一类加载的时机" class="anchor-link">#</a>一.类加载的时机</h3>
+<p style="text-indent:0"><span class="drop-cap">一</span>个类型从被加载到虚拟机内存中开始，到卸载出内存位置，它的整个生命周期将会经历加载（Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化（Initialization）、使用（Using）和卸载（Unloading）七个阶段。其中验证、准备、解析三部分统称为连接（Linking）。<br>
+1）有且只有六种情况必须对类进行&quot;初始化&quot;。</p>
+<h3 id="二类加载的过程"><a href="#二类加载的过程" class="anchor-link">#</a>二.类加载的过程</h3>
+<h4 id="1加载"><a href="#1加载" class="anchor-link">#</a>1.加载</h4>
+<p>1）通过一个类的全限定名来获取定义此类的二进制字节流。<br>
+2）将这个字节流所代表的的静态 存储结构转化为方法区的运行时数据结构。<br>
+3）在内存中生成一个代表这个类的java.lang.class对象，作为方法区这个类的各种数据的访问入口。<br>
+对于数组类而言，情况有所不同。（待补充）</p>
+<h4 id="2验证"><a href="#2验证" class="anchor-link">#</a>2.验证</h4>
+<p>这一阶段的目的是确保Class文件的字节流中包含的信息符合《Java虚拟机规范》的全部约束条件，保证这些信息被当做代码运行后不会威海虚拟机自身的安全。<br>
+验证阶段大致会完成下面四个阶段的检验动作：文件格式验证、元数据验证、字节码验证和符号引用验证。<br>
+1）文件格式验证<br>
+该阶段的主要目的是保证输入的字节流能正确地解析并存储于方法区之内，格式上符合描述一个Java类型信息的要求。后面的三个验证阶段全部是基于方法区的存储结构上进行的，不会再直接读取、操作字节流了。<br>
+2）元数据验证<br>
+该阶段主要对类的元数据信息进行语义校验。<br>
+3）字节码验证<br>
+通过数据流分析和控制流分析，确定程序语义是合法的、符合逻辑的。
+JDK6之后的Javac编译器和Java虚拟机里进行了一项联合优化，把尽可能多的校验辅助措施挪到Javac编译器里进行。具体做法是给方法体Code属性的属性表中新增了一项名为&quot;stackMapTable&quot;的新属性，描述了方法体所有的基本块。<br>
+4）符号引用验证
+对类自身以外（常量池中的各种符号引用）的各类信息进行匹配性校验，通俗来说，该类是否缺少或者被禁止访问它依赖的某些外部类、方法、字段等资源。</p>
+<h4 id="3准备"><a href="#3准备" class="anchor-link">#</a>3.准备</h4>
+<p>准备阶段是正式为类中定义的变量（即静态变量，被static修饰的变量）分配内存并设置类变量初始值的阶段。（初始值是数据类型的零值，赋值要到类的初始化阶段才会被执行，但是ConstantValue除外）。</p>
+<h4 id="4解析"><a href="#4解析" class="anchor-link">#</a>4.解析</h4>
+<p>Java虚拟机将常量池内的符号引用替换为直接引用的过程。（符号引用和直接引用的概念）<br>
+1）类或接口的解析
+2）字段解析
+3）方法解析
+4）接口方法解析</p>
+<h4 id="5初始化"><a href="#5初始化" class="anchor-link">#</a>5.初始化</h4>
+<p>初始化变量和其他资源，初始化阶段就是执行类构造器<clinit>()方法的过程。</p>
+<h5 id="1clinit方法"><a href="#1clinit方法" class="anchor-link">#</a>1.&lt;clinit&gt;()方法</h5>
+<ul>
+<li>它是由编译器自动收集类中的所有类变量的赋值动作和静态语句块（static{}块）中的语句合并产生的，编译器收集的顺序是由语句在源文件中出现的顺序决定的，静态语句块中只能访问到定义在静态语句块之前的变量，定义在它之后的变量，在前面的静态语句块可以赋值，但是不能访问。</li>
+<li>Java虚拟机会保证在子类的&lt;clinit&gt;（）方法执行前，父类的&lt;clinit&gt;（）方法已经执行完毕。</li>
+<li>由于父类的&lt;clinit&gt;（）方法先执行，父类中定义的静态语句块要优先于子类的变量赋值操作。</li>
+<li>&lt;clinit&gt;（）方法不是必需的，如果一个类中没有静态语句块，也没有对变量的赋值操作，那么编译器可以不为这个类生成<clinit>（）方法。</li>
+<li>执行接口的&lt;clinit&gt;（）方法方法不需要先执行父接口的&lt;clinit&gt;（）方法，接口的实现类在初始化时也一样不会执行接口的&lt;clinit&gt;（）方法。</li>
+<li>Java虚拟机必须保证一个类的&lt;clinit&gt;（）方法在多线程环境下被正确地加锁同步。</li>
+</ul>
+<h3 id="三类加载器"><a href="#三类加载器" class="anchor-link">#</a>三.类加载器</h3>
+<h4 id="1类与类加载器"><a href="#1类与类加载器" class="anchor-link">#</a>1.类与类加载器</h4>
+<p>对于任意一个类，都必须由加载它的类加载器和这个类本身一起共同确立其在Java虚拟机中的唯一性，每一个类加载器，都拥有一个独立的类名称空间。</p>
+<h4 id="2双亲委派模型"><a href="#2双亲委派模型" class="anchor-link">#</a>2.双亲委派模型</h4>
+<p>站在Java虚拟机的角度来看，只存在两种不同的类加载器：一种是启动类加载器（Bootstrap ClassLoader），是虚拟机自身的一部分；另外一种就是其他的所有的类加载器，这些类加载器都由Java语言实现，独立存在于虚拟机外部，并且全都继承自抽象类java.lang.CLassLoader。<br>
+Java一直保持着三层类加载器、双亲委派的类加载架构。
+3个系统提供的类加载器来进行加载：</p>
+<ul>
+<li>启动类加载器（Bootstrap Class Loader）</li>
+<li>扩展类加载器（Extension Class Loader）：<br>
+这个类加载器是在类sun.misc.Launcher$ExtClassLoader中以Java代码的形式实现的。它负载加载&lt;JAVA_HOME&gt;\lib\ext目录中，或者被java.ext.dirs系统变量所制定的路径中所有的类库。</li>
+<li>应用程序类加载器（Application Class Loader）:<br>
+它负责加载用户类路径（ClassPath）上所有的类库，可以再代码中使用这个类加载器。如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。</li>
+</ul>
+<h5 id="双亲委派模型"><a href="#双亲委派模型" class="anchor-link">#</a>双亲委派模型</h5>
+<p>双亲委派模型要求除了顶层的启动类加载器外，其余的类加载器都应有自己的父类加载器。父子关系不是以继承关系来实现的，而是通常使用组合关系来复用父加载器的代码。<br>
+双亲委派模型的工作过程是：如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成，每一个层次的类加载器都是如此，因此所有的加载请求最终都应该传送到最顶层的启动类加载器中，只有当父加载器反馈自己无法完成这个加载请求（它的搜索范围中没有找到所需的类）时，子加载器才会尝试自己去完成加载。</p>
+<h4 id="3破坏双亲委派模型"><a href="#3破坏双亲委派模型" class="anchor-link">#</a>3.破坏双亲委派模型</h4>
+<ul>
+<li>第一次被破坏</li>
+<li>第二次被破坏<br>
+如果有基础类型又要调用回用户的代码。<br>
+引入线程上下文类加载器（Thread Context ClassLoader）,通过该类父类加载器去请求子类加载器完成加载的行为。</li>
+<li>第三次被破坏
+热部署，OSGi通过类加载器实现热部署。</li>
+</ul>
+
+            </div>
+
+            
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+    <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/jvm/" rel="tag" class="post-tag-link">#jvm</a></div>
+        
+        
+            <div class="post-category">
+                <a href="/tech/" class="post-category-link active">tech</a> | <a href="/life/" class="post-category-link">life</a>
+            </div>
+        
+        
+    </footer>
+
+
+
+        
+
+
+        
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+
+            
+
+        </div>
+        <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('\/sw.js');
+            });
+        }
+    </script>
+
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

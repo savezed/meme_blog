@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+    <title type="text">sslouis</title>
+    <subtitle type="html">Blog of reuixiy in English.</subtitle>
+    <updated>2020-12-22T15:16:02&#43;08:00</updated>
+    <id>https://sslouis.com/en/</id>
+    <link rel="alternate" type="text/html" href="https://sslouis.com/en/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://sslouis.com/en/atom.xml" />
+    <author>
+            <name>sslouis</name>
+            <uri>https://sslouis.com/en/</uri>
+            
+                <email>sslouis22@gmail.com</email>
+            </author>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
+    <generator uri="https://gohugo.io/" version="0.79.0">Hugo</generator>
+</feed>
