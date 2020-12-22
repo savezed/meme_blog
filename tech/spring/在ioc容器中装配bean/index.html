@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>life | sslouis</title>
+    <title>在Ioc容器中装配Bean | sslouis</title>
 
     <link rel="stylesheet" href="/css/meme.min.css" />
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="sslouis" /><meta name="description" content="这是 reuixiy 的生活与技术博客！怎么记住 reuixiy 呢？其实就是「一休儿」的拼音，只不过顺序是从右往左……" />
+    <meta name="author" content="sslouis" /><meta name="description" content="概述 Bean配置信息首先定义了Bean的实现及依赖关系,Spring容器根据各种形式……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -37,28 +37,39 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="sslouis" />
-    <meta name="msapplication-starturl" content="../" />
+    <meta name="msapplication-starturl" content="../../../" />
     <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="msapplication-TileImage" content="../icons/mstile-150x150.png" />
+    <meta name="msapplication-TileImage" content="../../../icons/mstile-150x150.png" />
     <link rel="manifest" href="/manifest.json" />
 
     
     
 
     
-    <link rel="canonical" href="https://sslouis.com/life/" />
+    <link rel="canonical" href="https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "datePublished": "2017-05-27T15:13:14+08:00",
-        "dateModified": "2020-12-22T13:27:22+08:00",
-        "url": "https://sslouis.com/life/",
-        "name": "life",
-        "description": "这是 reuixiy 的生活与技术博客！怎么记住 reuixiy 呢？其实就是「一休儿」的拼音，只不过顺序是从右往左……",
+        "@type": "BlogPosting",
+        "datePublished": "2020-12-15T18:47:47+08:00",
+        "dateModified": "2020-12-15T21:09:50+08:00",
+        "url": "https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/",
+        "headline": "在Ioc容器中装配Bean",
+        "description": "概述 Bean配置信息首先定义了Bean的实现及依赖关系,Spring容器根据各种形式……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "tech",
+        "wordCount":  990 ,
         "image": "https://sslouis.com/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Viva La Vida",
+            "email": "sslouis22@gmail.com",
+            "image": "https://sslouis.com/icons/apple-touch-icon.png",
+            "url": "https://www.sslouis.com/",
+            "name": "sslouis"
+        },
         "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
         "publisher": {
             "@type": "Organization",
@@ -86,12 +97,17 @@
 
 
 
-<meta property="og:title" content="life" />
-<meta property="og:description" content="这是 reuixiy 的生活与技术博客！怎么记住 reuixiy 呢？其实就是「一休儿」的拼音，只不过顺序是从右往左……" />
-<meta property="og:url" content="https://sslouis.com/life/" />
+<meta property="og:title" content="在Ioc容器中装配Bean" />
+<meta property="og:description" content="概述 Bean配置信息首先定义了Bean的实现及依赖关系,Spring容器根据各种形式……" />
+<meta property="og:url" content="https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/" />
 <meta property="og:site_name" content="sslouis" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://sslouis.com/icons/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-12-15T18:47:47&#43;08:00" />
+    <meta property="article:modified_time" content="2020-12-15T21:09:50&#43;08:00" />
+    
+    <meta property="article:section" content="tech" />
+
 
         <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
 
@@ -120,7 +136,7 @@
     <header class="header">
         
             <div class="header-wrapper">
-                <div class="header-inner list">
+                <div class="header-inner single">
                     
     <div class="site-brand">
         
@@ -137,7 +153,7 @@
         
         
             
-                <li class="menu-item active"><a href="/life/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">生活</span></a>
+                <li class="menu-item"><a href="/life/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">生活</span></a>
                 </li>
             
         
@@ -192,110 +208,135 @@
 
             
             
-    
-        <main class="main list" id="main">
-            <div class="main-inner">
-                <div class="content list-group">
-                    
-                        
-                            <h1 class="list-title">life</h1>
-                        
-                        
-                    
+    <main class="main single" id="main">
+    <div class="main-inner">
 
-                    
-
-                    
-                    
-                        
-                        
-                            
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                        
-                    
-
-                    
-
-                    
-                    
-
-                    
-                    
-                    
-                        
-                        
-                            
-                            
-                        
-                        
-                        
-                        
-                            
-                        
-                        
-                        <h2 class="list-year">2020<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon chinese-zodiac"><path d="M675 908q7-10 17-29 10-18 28-69 17-52 15-98t-35-102q-32-56-106-95-54-15-69-8-5 3-6 8 0 5 18 39 17 33 36 74 20 41 25 85t-15 72q-47 0-88-35-21-18-34-46-1-2-4-4t-11-10q-7-8-17-9t-22 0q-13 1-28 12-88 69-76 98 2 5 8 18l25 50q6 13 7 20t-1 11q-3 2-58 4-56 2-70 9-26 16-7 33 25 22 131 30 46 4 75 0 28-4 39-14 10-10 13-21 3-10 3-25 0-16 4-22 12-21 27-19 14 2 19 23 1 5 1 15t2 17q2 6 5 18 3 10 10 15 6 5 18 10t29 5q24 0 68 6 44 7 72 6t37-12q20-18-28-44-34-16-57-16zm236-249q-11-30-24-55-14-26-26-40-8-9-23-27-12-12-19-18t-11-16q-4-9-4-16t8-21q14-19 43-55 39-57 22-62-3 1-7 2t-15 8-20 12q-10 5-23 17-13 11-22 20-10 9-20 25-10 15-13 27-3 13-2 30 1 18 11 34 13 24 39 53 15 17 44 49 18 21 29 44 10 24 3 53-8 28-43 61-19 19-95 24-2 1-4 3t-5 9q-1 3-4 10-1 3 5 10t18 5q16 1 40-3 23-4 52-16 28-12 48-34 19-21 28-53 2-10 2-22 0-25-12-58zM330 322q30 13 52 4l4-2q18-9 27-25 24-53 0-73-14-13-29-18-15-4-26-2-10 2-19 7-9 4-14 8-1 1-3 5-12 14-17 32-5 17 1 37 6 19 24 27zm-34 241q-46 90-66 116-10 14-17 36-7 23-6 43 1 21 15 25 8 3 20-2 11-5 22-13 11-9 26-23 9-9 26-27 13-12 28-30 22-26 44-34 23-8 41-2t37 29q87 110 106 79 7-13 2-49-3-23-8-46-5-22-11-41-6-18-13-33l-15-27q-7-13-13-22-6-8-11-18t-8-12q0-4 1-10t4-19q3-14 3-28v-26q0-14-5-24-1-1-2-3 6 1 14 1t15 2q31 2 54-6 22-8 32-25 11-16 15-32 4-17 3-32t-5-25q-22-48-99-54-3 0-7-1t-15 1-21 3q-9 1-20 12-11 12-17 22-21 46-9 84-81-35-166-10-57 17-80 39-22 21-24 42-12 0-16 2-17 4-27 11t-12 15q-1 2-1 4 0 6 7 15 21 22 62 18 2 3 5 8t16 16q12 10 23 21t33 19q22 7 40 11zm35-164q7 4 13 7t12 10q-10 10-25 18h-1q0-1-2-1t-4-1-7 0q-4 1-7-1t-8-1-9 0q20-41 38-31z"/></svg></h2>
-                        
-                            <ul class="list-part">
         
-            <li class="list-item">
-                <a href="/life/hello-world/" class="list-item-title">Hello World</a>
-                <time datetime="2020-12-15T18:47:47&#43;08:00" class="list-item-time">2020-12-15</time>
-            </li>
-        
-        
-    </ul>
 
+        <article class="content post h-entry" data-align="justify" data-type="tech" data-toc-num="true">
 
-                        
-                    
-                </div>
+            <h1 class="post-title p-name">在Ioc容器中装配Bean</h1>
+
+            
+
+            
+                
+            
+
+            
+
+            <div class="post-body e-content">
+              <h4 id="概述"><a href="#概述" class="anchor-link">#</a>概述</h4>
+<p style="text-indent:0"><span class="drop-cap">B</span>ean配置信息首先定义了Bean的实现及依赖关系,Spring容器根据各种形式的Bean配置信息在容器内部建立Bean定义注册表;然后根据注册表加载/实例化Bean,并建立Bean和Bean之间的依赖关系;最后将这些准备就绪的Bean放到Bean缓存池中,以供外层的应用程序进行调用.</p>
+<h3 id="依赖注入"><a href="#依赖注入" class="anchor-link">#</a>依赖注入</h3>
+<p>属性注入,构造函数注入</p>
+<h4 id="属性注入"><a href="#属性注入" class="anchor-link">#</a>属性注入</h4>
+<p>指通过setXxx()方法注入Bean的属性值或依赖对象,是最常采用的注入方式.<br>
+属性注入要求Bean提供一个默认的构造函数,并为需要注入的属性提供对应的Setter方法.<br>
+Sring先调用Bean的默认构造函数实例化Bean对象,然后通过反射的方式调用Setter方法注入属性值.<br>
+需要注入变量名的大小写问题.</p>
+<h4 id="构造函数注入"><a href="#构造函数注入" class="anchor-link">#</a>构造函数注入</h4>
+<p>使用构造函数的前提是Bean必须提供带参的构造函数.</p>
+<ul>
+<li>按类型匹配入参</li>
+<li>按索引匹配入参</li>
+<li>联合使用类型和索引匹配入参</li>
+<li>通过自身类型反射匹配入参</li>
+</ul>
+<h4 id="循环依赖问题"><a href="#循环依赖问题" class="anchor-link">#</a>循环依赖问题</h4>
+<p>如果两个Bean都采用构造函数注入,而且都通过构造函数入参引用对方,就会发生循环依赖问题.<br>
+解决:将构造函数注入方式改为属性注入方式.</p>
+<h4 id="工厂方法注入"><a href="#工厂方法注入" class="anchor-link">#</a>工厂方法注入</h4>
+<h5 id="非静态工厂方法"><a href="#非静态工厂方法" class="anchor-link">#</a>非静态工厂方法</h5>
+<p>工厂类对外屏蔽了目标类的实例化步骤,调用者甚至无需知道具体的目标类是什么</p>
+<h5 id="静态工厂方法"><a href="#静态工厂方法" class="anchor-link">#</a>静态工厂方法</h5>
+<h4 id="bean作用域"><a href="#bean作用域" class="anchor-link">#</a>Bean作用域</h4>
+<ul>
+<li>singleton 在Spring Ioc容器中仅存在一个Bean实例,Bean以单实例的方式存在</li>
+<li>prototype 每次在容器中调用Bean时,都返回一个新的实例</li>
+<li>request 每次HTTP请求都会创建一个新的Bean,仅适用于WebApplicationContext</li>
+<li>session 同一个HTTP Session共享一个Bean,仅适用于WebApplicationContext</li>
+<li>globalSession 同一个全局Session共享一个Bean</li>
+</ul>
+<h4 id="基于注解的配置"><a href="#基于注解的配置" class="anchor-link">#</a>基于注解的配置</h4>
+<ul>
+<li>@Component</li>
+<li>@Repository</li>
+<li>@Service</li>
+<li>@Controller</li>
+</ul>
+<h5 id="扫描注解定义的bean"><a href="#扫描注解定义的bean" class="anchor-link">#</a>扫描注解定义的Bean</h5>
+<h5 id="自动装配bean"><a href="#自动装配bean" class="anchor-link">#</a>自动装配Bean</h5>
+<ul>
+<li>使用@Autowired进行自动注入<br>
+可以使用@Autowired(required=false)避免抛出异常<br>
+通过@Qualifier(&quot;xx&quot;)匹配限定Bean<br>
+可以对类成员变量及方法的入参进行标注</li>
+</ul>
+<pre><code>@Autowired
+public void setLogDao(LogDao logDao){
+    this.logDao = logDao;
+}
+</code></pre><p>一般建议在方法上标注@Autowired注解</p>
+<ul>
+<li>@Resource按名称匹配注入</li>
+<li>@Scope注解可以指定Bean的作用范围</li>
+<li>@PostConstruct和@PreDstroy注解可以用在类方法上</li>
+</ul>
+<h4 id="基于java类的配置"><a href="#基于java类的配置" class="anchor-link">#</a>基于Java类的配置</h4>
+<p>@Configuration,可以为Spring容器提供Bean定义的信息</p>
+
             </div>
-        </main>
-    
+
+            
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+    <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/hugo/" rel="tag" class="post-tag-link">#hugo</a></div>
+        
+        
+            <div class="post-category">
+                <a href="/tech/" class="post-category-link active">tech</a> | <a href="/life/" class="post-category-link">life</a>
+            </div>
+        
+        
+    </footer>
+
+
+
+        
+
+
+        
+
+
+        
+
+
+    </div>
+</main>
+
 
             
 

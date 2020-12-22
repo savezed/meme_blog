@@ -9,18 +9,7 @@
   </url>
   
   <url>
-    <loc>https://sslouis.com/tech/jvm/</loc>
-    <lastmod>2020-12-22T13:29:28+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sslouis.com/tags/java/</loc>
-    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sslouis.com/tech/jvm/javac/</loc>
+    <loc>https://sslouis.com/tech/javac/</loc>
     <lastmod>2020-12-22T13:27:22+08:00</lastmod>
   </url>
   
@@ -37,6 +26,22 @@
                 hreflang="zh"
                 href="https://sslouis.com/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://sslouis.com/tech/jvm/</loc>
+    <lastmod>2020-12-22T13:29:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sslouis.com/tags/java/</loc>
+    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sslouis.com/tech/jvm/javac/</loc>
+    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
   </url>
   
   <url>
@@ -60,6 +65,33 @@
   </url>
   
   <url>
+    <loc>https://sslouis.com/life/</loc>
+    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sslouis.com/tech/spring/</loc>
+    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sslouis.com/life/hello-world/</loc>
+    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sslouis.com/tags/hugo/</loc>
+    <lastmod>2020-12-15T21:09:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/</loc>
+    <lastmod>2020-12-15T21:09:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sslouis.com/tags/jvm/</loc>
     <lastmod>2020-12-22T13:29:28+08:00</lastmod>
   </url>
@@ -70,12 +102,22 @@
   </url>
   
   <url>
-    <loc>https://sslouis.com/categories/</loc>
-    <priority>0</priority>
+    <loc>https://sslouis.com/about/</loc>
+    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sslouis.com/en/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sslouis.com/about/"
+                />
   </url>
   
   <url>
-    <loc>https://sslouis.com/life/</loc>
+    <loc>https://sslouis.com/categories/</loc>
     <priority>0</priority>
   </url>
   
@@ -91,12 +133,6 @@
   
   <url>
     <loc>https://sslouis.com/tech/mysql/mysql1.0/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sslouis.com/tech/spring/</loc>
-    <lastmod>2020-12-22T13:27:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   

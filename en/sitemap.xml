@@ -5,6 +5,16 @@
   <url>
     <loc>https://sslouis.com/en/about/</loc>
     <lastmod>2020-12-22T14:03:26+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sslouis.com/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sslouis.com/en/about/"
+                />
   </url>
   
   <url>
