@@ -23,10 +23,44 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 22 Dec 2020 15:16:02 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 22 Dec 2020 16:02:58 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://sslouis.com/rss.xml" />
         
+        
+            <item>
+                <title>Javac</title>
+                <link>https://sslouis.com/tech/javac/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/javac/</guid>
+                <pubDate>Tue, 22 Dec 2020 13:12:27 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description></description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Javac编译优化</title>
@@ -137,6 +171,149 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                                 
                                 
                                     <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Hello World</title>
+                <link>https://sslouis.com/life/hello-world/</link>
+                <guid isPermaLink="true">https://sslouis.com/life/hello-world/</guid>
+                <pubDate>Tue, 15 Dec 2020 18:47:47 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description></description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/life/">life</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>在Ioc容器中装配Bean</title>
+                <link>https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/</guid>
+                <pubDate>Tue, 15 Dec 2020 18:47:47 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h4 id=&#34;概述&#34;&gt;概述&lt;/h4&gt;
+&lt;p&gt;Bean配置信息首先定义了Bean的实现及依赖关系,Spring容器根据各种形式的Bean配置信息在容器内部建立Bean定义注册表;然后根据注册表加载/实例化Bean,并建立Bean和Bean之间的依赖关系;最后将这些准备就绪的Bean放到Bean缓存池中,以供外层的应用程序进行调用.&lt;/p&gt;
+&lt;h3 id=&#34;依赖注入&#34;&gt;依赖注入&lt;/h3&gt;
+&lt;p&gt;属性注入,构造函数注入&lt;/p&gt;
+&lt;h4 id=&#34;属性注入&#34;&gt;属性注入&lt;/h4&gt;
+&lt;p&gt;指通过setXxx()方法注入Bean的属性值或依赖对象,是最常采用的注入方式.&lt;br&gt;
+属性注入要求Bean提供一个默认的构造函数,并为需要注入的属性提供对应的Setter方法.&lt;br&gt;
+Sring先调用Bean的默认构造函数实例化Bean对象,然后通过反射的方式调用Setter方法注入属性值.&lt;br&gt;
+需要注入变量名的大小写问题.&lt;/p&gt;
+&lt;h4 id=&#34;构造函数注入&#34;&gt;构造函数注入&lt;/h4&gt;
+&lt;p&gt;使用构造函数的前提是Bean必须提供带参的构造函数.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按类型匹配入参&lt;/li&gt;
+&lt;li&gt;按索引匹配入参&lt;/li&gt;
+&lt;li&gt;联合使用类型和索引匹配入参&lt;/li&gt;
+&lt;li&gt;通过自身类型反射匹配入参&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;循环依赖问题&#34;&gt;循环依赖问题&lt;/h4&gt;
+&lt;p&gt;如果两个Bean都采用构造函数注入,而且都通过构造函数入参引用对方,就会发生循环依赖问题.&lt;br&gt;
+解决:将构造函数注入方式改为属性注入方式.&lt;/p&gt;
+&lt;h4 id=&#34;工厂方法注入&#34;&gt;工厂方法注入&lt;/h4&gt;
+&lt;h5 id=&#34;非静态工厂方法&#34;&gt;非静态工厂方法&lt;/h5&gt;
+&lt;p&gt;工厂类对外屏蔽了目标类的实例化步骤,调用者甚至无需知道具体的目标类是什么&lt;/p&gt;
+&lt;h5 id=&#34;静态工厂方法&#34;&gt;静态工厂方法&lt;/h5&gt;
+&lt;h4 id=&#34;bean作用域&#34;&gt;Bean作用域&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;singleton 在Spring Ioc容器中仅存在一个Bean实例,Bean以单实例的方式存在&lt;/li&gt;
+&lt;li&gt;prototype 每次在容器中调用Bean时,都返回一个新的实例&lt;/li&gt;
+&lt;li&gt;request 每次HTTP请求都会创建一个新的Bean,仅适用于WebApplicationContext&lt;/li&gt;
+&lt;li&gt;session 同一个HTTP Session共享一个Bean,仅适用于WebApplicationContext&lt;/li&gt;
+&lt;li&gt;globalSession 同一个全局Session共享一个Bean&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;基于注解的配置&#34;&gt;基于注解的配置&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;@Component&lt;/li&gt;
+&lt;li&gt;@Repository&lt;/li&gt;
+&lt;li&gt;@Service&lt;/li&gt;
+&lt;li&gt;@Controller&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;扫描注解定义的bean&#34;&gt;扫描注解定义的Bean&lt;/h5&gt;
+&lt;h5 id=&#34;自动装配bean&#34;&gt;自动装配Bean&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;使用@Autowired进行自动注入&lt;br&gt;
+可以使用@Autowired(required=false)避免抛出异常&lt;br&gt;
+通过@Qualifier(&amp;quot;xx&amp;quot;)匹配限定Bean&lt;br&gt;
+可以对类成员变量及方法的入参进行标注&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;@Autowired
+public void setLogDao(LogDao logDao){
+    this.logDao = logDao;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一般建议在方法上标注@Autowired注解&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;@Resource按名称匹配注入&lt;/li&gt;
+&lt;li&gt;@Scope注解可以指定Bean的作用范围&lt;/li&gt;
+&lt;li&gt;@PostConstruct和@PreDstroy注解可以用在类方法上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;基于java类的配置&#34;&gt;基于Java类的配置&lt;/h4&gt;
+&lt;p&gt;@Configuration,可以为Spring容器提供Bean定义的信息&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/hugo/">hugo</category>
                                 
                             
                         
