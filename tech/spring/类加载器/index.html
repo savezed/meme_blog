@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title> | sslouis</title>
+    <title>类加载器 | sslouis</title>
 
     <link rel="stylesheet" href="/css/meme.min.css" />
 
@@ -27,9 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="sslouis" /><meta name="description" content="类加载器 三种类型  根装载器 使用C&#43;&#43;编写,负责装载JRE的核心类库 ExtClassLoader(扩展类装载器) 装载JRE扩展目录ext中的JAR类包 AppClassLoader(应用类装载器) 装载Classpath路径下的类包  全盘负责委托机制 先委托父装载器寻找目标类,只有在找不到的情况下才从自己的类路径中查找并装载目标类.
-重要方法  Class loadClass(String name): name参数指定类装载器需要装载类的名字,必须使用全限定名. Class defineClass(String name,byte[] b,int off,int len):将类文件的字节数组转换成JVM内部的java.lang.Class对象.字节数组可以从本地文件系统,远程网络获取. 参数name为字节数组对应的全限定类名. ClassLoader getParent():获取类装载器的父装载器.  Class 方法 Constructor Method
-其他  Class没有public的构造方法,Class对象是在装载类时由JVM通过调用类装载器中的defineClass()方法自动构造的. 可以看到加载了哪个类,srcAdd.jsp 对于private或protected成员变量和方法 field.setAccessible(true) method.setAccessible(true) 如果JVM的安全管理器设置了相应的安全机制,将抛出SecurityException  参考&lt;精通Spring4.x--企业应用开发实战&gt;" />
+    <meta name="author" content="sslouis" /><meta name="description" content="类加载器 三种类型 根装载器 使用C&#43;&#43;编写,负责装载JRE的核心类库 ExtClassLo……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -55,14 +53,14 @@
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2017-05-27T15:13:14+08:00",
-        "dateModified": "2017-05-27T15:13:14+08:00",
+        "datePublished": "2020-12-06T18:28:36+08:00",
+        "dateModified": "2020-12-22T18:22:37+08:00",
         "url": "https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/",
-        "headline": "",
-        "description": "类加载器 三种类型  根装载器 使用C++编写,负责装载JRE的核心类库 ExtClassLoader(扩展类装载器) 装载JRE扩展目录ext中的JAR类包 AppClassLoader(应用类装载器) 装载Classpath路径下的类包  全盘负责委托机制 先委托父装载器寻找目标类,只有在找不到的情况下才从自己的类路径中查找并装载目标类.\n重要方法  Class loadClass(String name): name参数指定类装载器需要装载类的名字,必须使用全限定名. Class defineClass(String name,byte[] b,int off,int len):将类文件的字节数组转换成JVM内部的java.lang.Class对象.字节数组可以从本地文件系统,远程网络获取. 参数name为字节数组对应的全限定类名. ClassLoader getParent():获取类装载器的父装载器.  Class 方法 Constructor Method\n其他  Class没有public的构造方法,Class对象是在装载类时由JVM通过调用类装载器中的defineClass()方法自动构造的. 可以看到加载了哪个类,srcAdd.jsp 对于private或protected成员变量和方法 field.setAccessible(true) method.setAccessible(true) 如果JVM的安全管理器设置了相应的安全机制,将抛出SecurityException  参考\u003c精通Spring4.x--企业应用开发实战\u003e",
+        "headline": "类加载器",
+        "description": "类加载器 三种类型 根装载器 使用C++编写,负责装载JRE的核心类库 ExtClassLo……",
         "inLanguage" : "zh-CN",
         "articleSection": "tech",
-        "wordCount":  36 ,
+        "wordCount":  506 ,
         "image": "https://sslouis.com/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -99,16 +97,14 @@
 
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="类加载器 三种类型  根装载器 使用C&#43;&#43;编写,负责装载JRE的核心类库 ExtClassLoader(扩展类装载器) 装载JRE扩展目录ext中的JAR类包 AppClassLoader(应用类装载器) 装载Classpath路径下的类包  全盘负责委托机制 先委托父装载器寻找目标类,只有在找不到的情况下才从自己的类路径中查找并装载目标类.
-重要方法  Class loadClass(String name): name参数指定类装载器需要装载类的名字,必须使用全限定名. Class defineClass(String name,byte[] b,int off,int len):将类文件的字节数组转换成JVM内部的java.lang.Class对象.字节数组可以从本地文件系统,远程网络获取. 参数name为字节数组对应的全限定类名. ClassLoader getParent():获取类装载器的父装载器.  Class 方法 Constructor Method
-其他  Class没有public的构造方法,Class对象是在装载类时由JVM通过调用类装载器中的defineClass()方法自动构造的. 可以看到加载了哪个类,srcAdd.jsp 对于private或protected成员变量和方法 field.setAccessible(true) method.setAccessible(true) 如果JVM的安全管理器设置了相应的安全机制,将抛出SecurityException  参考&lt;精通Spring4.x--企业应用开发实战&gt;" />
+<meta property="og:title" content="类加载器" />
+<meta property="og:description" content="类加载器 三种类型 根装载器 使用C&#43;&#43;编写,负责装载JRE的核心类库 ExtClassLo……" />
 <meta property="og:url" content="https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" />
 <meta property="og:site_name" content="sslouis" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://sslouis.com/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2017-05-27T15:13:14&#43;08:00" />
-    <meta property="article:modified_time" content="2017-05-27T15:13:14&#43;08:00" />
+    <meta property="article:published_time" content="2020-12-06T18:28:36&#43;08:00" />
+    <meta property="article:modified_time" content="2020-12-22T18:22:37&#43;08:00" />
     
     <meta property="article:section" content="tech" />
 
@@ -219,7 +215,7 @@
 
         <article class="content post h-entry" data-align="justify" data-type="tech" data-toc-num="true">
 
-            <h1 class="post-title p-name"></h1>
+            <h1 class="post-title p-name">类加载器</h1>
 
             
 
@@ -260,7 +256,9 @@
 <code>method.setAccessible(true)</code>
 如果JVM的安全管理器设置了相应的安全机制,将抛出SecurityException</li>
 </ul>
+<blockquote>
 <p>参考&lt;精通Spring4.x--企业应用开发实战&gt;</p>
+</blockquote>
 
             </div>
 
@@ -288,6 +286,8 @@
 
         
     <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/jvm/" rel="tag" class="post-tag-link">#jvm</a> <a href="/tags/spring/" rel="tag" class="post-tag-link">#spring</a></div>
         
         
             <div class="post-category">

@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title> | sslouis</title>
+    <title>IoC原理 | sslouis</title>
 
     <link rel="stylesheet" href="/css/meme.min.css" />
 
@@ -27,10 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="sslouis" /><meta name="description" content="BeanFactory和ApplicationContext和Bean 某一接口具体实现类的选择控制权从调用类中移除,转交给第三方决定,即由Spring容器借由Bean配置来进行控制. 类型  构造函数注入 属性注入 接口注入  BeanFactory 通常称为IoC容器,ApplicationContext为应用上下文. BeanFactory是Spring框架的基础设施,面向Spring本身;ApplicationContext面向使用Spring框架的开发者. 所有可以被Spring容器实例化并管理的Java类都可以成为Bean.
-ApplicationContext 实现类  CLassPathXmlApplicationContext ApplicationCOntext ctx = new ClassPathXmlApplicationContext(&#34;com/smart/context/beans.xml&#34;) FileSystemXmlApplicationContext  ApplicationContext在初始化应用上下文时就实例化所有单实例的Bean. JavaConfig提供了Spring基于类注解的配置方式,@Configuration AnnotationConfigApplicationContext WebApplicationContext 专门为Web应用准备的,从WebApplicationContext中可以获得ServletCOntext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.
-WebApplicationContextUtils 为Bean添加了三个新的作用域:request,session和global session 定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE,在上下文启动时,WebApplicationContextContext实例即以此为键放置在ServletContext的属性列表中, WebApplicationContext初始化 父子容器 HierarchicalBeanFactory Bean的生命周期 BeanPostProcessor(AOP,动态代理的关键)  Bean的作用范围scope=&#34;prototype&#34;时,将Bean返回给调用者,调用者负责Bean后续生命的管理, scope=&#34;singleton&#34;,将Bean放入Spring Ioc容器的缓存池中,并将Bean引用返回给调用者,Spring继续对这些Bean进行后续的生命管理.
-Bean生命周期中的方法,分为4类  Bean自身的方法" />
+    <meta name="author" content="sslouis" /><meta name="description" content="BeanFactory和ApplicationContext和Bean 某一接口具体实……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -56,14 +53,14 @@ Bean生命周期中的方法,分为4类  Bean自身的方法" />
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2017-05-27T15:13:14+08:00",
-        "dateModified": "2017-05-27T15:13:14+08:00",
+        "datePublished": "2019-12-27T16:22:06+08:00",
+        "dateModified": "2020-12-22T13:27:22+08:00",
         "url": "https://sslouis.com/tech/spring/ioc/",
-        "headline": "",
-        "description": "BeanFactory和ApplicationContext和Bean 某一接口具体实现类的选择控制权从调用类中移除,转交给第三方决定,即由Spring容器借由Bean配置来进行控制. 类型  构造函数注入 属性注入 接口注入  BeanFactory 通常称为IoC容器,ApplicationContext为应用上下文. BeanFactory是Spring框架的基础设施,面向Spring本身;ApplicationContext面向使用Spring框架的开发者. 所有可以被Spring容器实例化并管理的Java类都可以成为Bean.\nApplicationContext 实现类  CLassPathXmlApplicationContext ApplicationCOntext ctx = new ClassPathXmlApplicationContext(\"com/smart/context/beans.xml\") FileSystemXmlApplicationContext  ApplicationContext在初始化应用上下文时就实例化所有单实例的Bean. JavaConfig提供了Spring基于类注解的配置方式,@Configuration AnnotationConfigApplicationContext WebApplicationContext 专门为Web应用准备的,从WebApplicationContext中可以获得ServletCOntext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.\nWebApplicationContextUtils 为Bean添加了三个新的作用域:request,session和global session 定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE,在上下文启动时,WebApplicationContextContext实例即以此为键放置在ServletContext的属性列表中, WebApplicationContext初始化 父子容器 HierarchicalBeanFactory Bean的生命周期 BeanPostProcessor(AOP,动态代理的关键)  Bean的作用范围scope=\"prototype\"时,将Bean返回给调用者,调用者负责Bean后续生命的管理, scope=\"singleton\",将Bean放入Spring Ioc容器的缓存池中,并将Bean引用返回给调用者,Spring继续对这些Bean进行后续的生命管理.\nBean生命周期中的方法,分为4类  Bean自身的方法",
+        "headline": "IoC原理",
+        "description": "BeanFactory和ApplicationContext和Bean 某一接口具体实……",
         "inLanguage" : "zh-CN",
         "articleSection": "tech",
-        "wordCount":  45 ,
+        "wordCount":  1026 ,
         "image": ["https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"],
         "author": {
             "@type": "Person",
@@ -101,17 +98,14 @@ Bean生命周期中的方法,分为4类  Bean自身的方法" />
 
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="BeanFactory和ApplicationContext和Bean 某一接口具体实现类的选择控制权从调用类中移除,转交给第三方决定,即由Spring容器借由Bean配置来进行控制. 类型  构造函数注入 属性注入 接口注入  BeanFactory 通常称为IoC容器,ApplicationContext为应用上下文. BeanFactory是Spring框架的基础设施,面向Spring本身;ApplicationContext面向使用Spring框架的开发者. 所有可以被Spring容器实例化并管理的Java类都可以成为Bean.
-ApplicationContext 实现类  CLassPathXmlApplicationContext ApplicationCOntext ctx = new ClassPathXmlApplicationContext(&#34;com/smart/context/beans.xml&#34;) FileSystemXmlApplicationContext  ApplicationContext在初始化应用上下文时就实例化所有单实例的Bean. JavaConfig提供了Spring基于类注解的配置方式,@Configuration AnnotationConfigApplicationContext WebApplicationContext 专门为Web应用准备的,从WebApplicationContext中可以获得ServletCOntext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.
-WebApplicationContextUtils 为Bean添加了三个新的作用域:request,session和global session 定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE,在上下文启动时,WebApplicationContextContext实例即以此为键放置在ServletContext的属性列表中, WebApplicationContext初始化 父子容器 HierarchicalBeanFactory Bean的生命周期 BeanPostProcessor(AOP,动态代理的关键)  Bean的作用范围scope=&#34;prototype&#34;时,将Bean返回给调用者,调用者负责Bean后续生命的管理, scope=&#34;singleton&#34;,将Bean放入Spring Ioc容器的缓存池中,并将Bean引用返回给调用者,Spring继续对这些Bean进行后续的生命管理.
-Bean生命周期中的方法,分为4类  Bean自身的方法" />
+<meta property="og:title" content="IoC原理" />
+<meta property="og:description" content="BeanFactory和ApplicationContext和Bean 某一接口具体实……" />
 <meta property="og:url" content="https://sslouis.com/tech/spring/ioc/" />
 <meta property="og:site_name" content="sslouis" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" />
 <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2017-05-27T15:13:14&#43;08:00" />
-    <meta property="article:modified_time" content="2017-05-27T15:13:14&#43;08:00" />
+    <meta property="article:published_time" content="2019-12-27T16:22:06&#43;08:00" />
+    <meta property="article:modified_time" content="2020-12-22T13:27:22&#43;08:00" />
     
     <meta property="article:section" content="tech" />
 
@@ -222,7 +216,7 @@ Bean生命周期中的方法,分为4类  Bean自身的方法" />
 
         <article class="content post h-entry" data-align="justify" data-type="tech" data-toc-num="true">
 
-            <h1 class="post-title p-name"></h1>
+            <h1 class="post-title p-name">IoC原理</h1>
 
             
 
@@ -308,6 +302,8 @@ AspectJWeavingEnabler,CustomAutowireConfigurer,ConfigurationCLassPostProcessor</
 
         
     <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/spring/" rel="tag" class="post-tag-link">#spring</a></div>
         
         
             <div class="post-category">

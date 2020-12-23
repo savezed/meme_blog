@@ -23,44 +23,10 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 22 Dec 2020 16:02:58 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 23 Dec 2020 08:49:56 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://sslouis.com/rss.xml" />
         
-        
-            <item>
-                <title>Javac</title>
-                <link>https://sslouis.com/tech/javac/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/javac/</guid>
-                <pubDate>Tue, 22 Dec 2020 13:12:27 &#43;0800</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description></description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
         
             <item>
                 <title>Javac编译优化</title>
@@ -130,22 +96,24 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
             </item>
         
             <item>
-                <title>雪花算法</title>
-                <link>https://sslouis.com/tech/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</guid>
+                <title>PriorityQueue笔记</title>
+                <link>https://sslouis.com/tech/spring/priorityqueue/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/priorityqueue/</guid>
                 <pubDate>Fri, 18 Dec 2020 20:33:32 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;h4 id=&#34;特点&#34;&gt;特点&lt;/h4&gt;
+                    <description>&lt;h2 id=&#34;priorityqueue--优先级队列&#34;&gt;PriorityQueue  优先级队列&lt;/h2&gt;
+&lt;h3 id=&#34;底层&#34;&gt;底层&lt;/h3&gt;
+&lt;p&gt;使用了堆,可以自我调整的二叉树,对树执行添加(add)和删除(remove)操作,
+可以让最小的元素移动到根,而不必花费时间对元素进行排序.&lt;/p&gt;
+&lt;h3 id=&#34;典型事例&#34;&gt;典型事例&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;能满足高并发分布式系统环境下ID不重复&lt;/li&gt;
-&lt;li&gt;基于时间戳，可以保证基本有序递增&lt;/li&gt;
-&lt;li&gt;不依赖第三方的库或者中间件&lt;/li&gt;
-&lt;li&gt;生成效率极高&lt;/li&gt;
+&lt;li&gt;任务调度&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;代码待补充&#34;&gt;代码待补充&lt;/h3&gt;
 </description>
                 
                 
@@ -161,6 +129,14 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                             
                         
                     
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
                 
                 
                 
@@ -170,7 +146,57 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                                 
                                 
                                 
-                                    <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+                                    <category domain="https://sslouis.com/tags/java-collections/">Java Collections</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Spring AOP笔记</title>
+                <link>https://sslouis.com/tech/spring/spring-aop/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/spring-aop/</guid>
+                <pubDate>Fri, 18 Dec 2020 20:33:32 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description></description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring-aop/">Spring AOP</category>
                                 
                             
                         
@@ -213,74 +239,48 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
             </item>
         
             <item>
-                <title>在Ioc容器中装配Bean</title>
-                <link>https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/</guid>
-                <pubDate>Tue, 15 Dec 2020 18:47:47 &#43;0800</pubDate>
+                <title>类加载器</title>
+                <link>https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+                <pubDate>Sun, 06 Dec 2020 18:28:36 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;h4 id=&#34;概述&#34;&gt;概述&lt;/h4&gt;
-&lt;p&gt;Bean配置信息首先定义了Bean的实现及依赖关系,Spring容器根据各种形式的Bean配置信息在容器内部建立Bean定义注册表;然后根据注册表加载/实例化Bean,并建立Bean和Bean之间的依赖关系;最后将这些准备就绪的Bean放到Bean缓存池中,以供外层的应用程序进行调用.&lt;/p&gt;
-&lt;h3 id=&#34;依赖注入&#34;&gt;依赖注入&lt;/h3&gt;
-&lt;p&gt;属性注入,构造函数注入&lt;/p&gt;
-&lt;h4 id=&#34;属性注入&#34;&gt;属性注入&lt;/h4&gt;
-&lt;p&gt;指通过setXxx()方法注入Bean的属性值或依赖对象,是最常采用的注入方式.&lt;br&gt;
-属性注入要求Bean提供一个默认的构造函数,并为需要注入的属性提供对应的Setter方法.&lt;br&gt;
-Sring先调用Bean的默认构造函数实例化Bean对象,然后通过反射的方式调用Setter方法注入属性值.&lt;br&gt;
-需要注入变量名的大小写问题.&lt;/p&gt;
-&lt;h4 id=&#34;构造函数注入&#34;&gt;构造函数注入&lt;/h4&gt;
-&lt;p&gt;使用构造函数的前提是Bean必须提供带参的构造函数.&lt;/p&gt;
+                    <description>&lt;h2 id=&#34;类加载器&#34;&gt;类加载器&lt;/h2&gt;
+&lt;h3 id=&#34;三种类型&#34;&gt;三种类型&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;按类型匹配入参&lt;/li&gt;
-&lt;li&gt;按索引匹配入参&lt;/li&gt;
-&lt;li&gt;联合使用类型和索引匹配入参&lt;/li&gt;
-&lt;li&gt;通过自身类型反射匹配入参&lt;/li&gt;
+&lt;li&gt;根装载器
+使用C++编写,负责装载JRE的核心类库&lt;/li&gt;
+&lt;li&gt;ExtClassLoader(扩展类装载器) 装载JRE扩展目录ext中的JAR类包&lt;/li&gt;
+&lt;li&gt;AppClassLoader(应用类装载器) 装载Classpath路径下的类包&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;循环依赖问题&#34;&gt;循环依赖问题&lt;/h4&gt;
-&lt;p&gt;如果两个Bean都采用构造函数注入,而且都通过构造函数入参引用对方,就会发生循环依赖问题.&lt;br&gt;
-解决:将构造函数注入方式改为属性注入方式.&lt;/p&gt;
-&lt;h4 id=&#34;工厂方法注入&#34;&gt;工厂方法注入&lt;/h4&gt;
-&lt;h5 id=&#34;非静态工厂方法&#34;&gt;非静态工厂方法&lt;/h5&gt;
-&lt;p&gt;工厂类对外屏蔽了目标类的实例化步骤,调用者甚至无需知道具体的目标类是什么&lt;/p&gt;
-&lt;h5 id=&#34;静态工厂方法&#34;&gt;静态工厂方法&lt;/h5&gt;
-&lt;h4 id=&#34;bean作用域&#34;&gt;Bean作用域&lt;/h4&gt;
+&lt;h3 id=&#34;全盘负责委托机制&#34;&gt;全盘负责委托机制&lt;/h3&gt;
+&lt;p&gt;先委托父装载器寻找目标类,只有在找不到的情况下才从自己的类路径中查找并装载目标类.&lt;/p&gt;
+&lt;h3 id=&#34;重要方法&#34;&gt;重要方法&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;singleton 在Spring Ioc容器中仅存在一个Bean实例,Bean以单实例的方式存在&lt;/li&gt;
-&lt;li&gt;prototype 每次在容器中调用Bean时,都返回一个新的实例&lt;/li&gt;
-&lt;li&gt;request 每次HTTP请求都会创建一个新的Bean,仅适用于WebApplicationContext&lt;/li&gt;
-&lt;li&gt;session 同一个HTTP Session共享一个Bean,仅适用于WebApplicationContext&lt;/li&gt;
-&lt;li&gt;globalSession 同一个全局Session共享一个Bean&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Class loadClass(String name)&lt;/code&gt;: name参数指定类装载器需要装载类的名字,必须使用全限定名.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Class defineClass(String name,byte[] b,int off,int len)&lt;/code&gt;:将类文件的字节数组转换成JVM内部的java.lang.Class对象.字节数组可以从本地文件系统,远程网络获取.
+参数name为字节数组对应的全限定类名.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ClassLoader getParent()&lt;/code&gt;:获取类装载器的父装载器.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;基于注解的配置&#34;&gt;基于注解的配置&lt;/h4&gt;
+&lt;h3 id=&#34;class&#34;&gt;Class&lt;/h3&gt;
+&lt;h4 id=&#34;方法&#34;&gt;方法&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Constructor&lt;/code&gt;
+&lt;code&gt;Method&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;@Component&lt;/li&gt;
-&lt;li&gt;@Repository&lt;/li&gt;
-&lt;li&gt;@Service&lt;/li&gt;
-&lt;li&gt;@Controller&lt;/li&gt;
+&lt;li&gt;Class没有public的构造方法,Class对象是在装载类时由JVM通过调用类装载器中的defineClass()方法自动构造的.
+可以看到加载了哪个类,srcAdd.jsp&lt;/li&gt;
+&lt;li&gt;对于private或protected成员变量和方法
+&lt;code&gt;field.setAccessible(true)&lt;/code&gt;
+&lt;code&gt;method.setAccessible(true)&lt;/code&gt;
+如果JVM的安全管理器设置了相应的安全机制,将抛出SecurityException&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5 id=&#34;扫描注解定义的bean&#34;&gt;扫描注解定义的Bean&lt;/h5&gt;
-&lt;h5 id=&#34;自动装配bean&#34;&gt;自动装配Bean&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;使用@Autowired进行自动注入&lt;br&gt;
-可以使用@Autowired(required=false)避免抛出异常&lt;br&gt;
-通过@Qualifier(&amp;quot;xx&amp;quot;)匹配限定Bean&lt;br&gt;
-可以对类成员变量及方法的入参进行标注&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;@Autowired
-public void setLogDao(LogDao logDao){
-    this.logDao = logDao;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一般建议在方法上标注@Autowired注解&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;@Resource按名称匹配注入&lt;/li&gt;
-&lt;li&gt;@Scope注解可以指定Bean的作用范围&lt;/li&gt;
-&lt;li&gt;@PostConstruct和@PreDstroy注解可以用在类方法上&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;基于java类的配置&#34;&gt;基于Java类的配置&lt;/h4&gt;
-&lt;p&gt;@Configuration,可以为Spring容器提供Bean定义的信息&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考&amp;lt;精通Spring4.x--企业应用开发实战&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
                 
                 
@@ -313,9 +313,151 @@ public void setLogDao(LogDao logDao){
                                 
                                 
                                 
-                                    <category domain="https://sslouis.com/tags/hugo/">hugo</category>
+                                    <category domain="https://sslouis.com/tags/jvm/">JVM</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring/">Spring</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>WeakHashMap</title>
+                <link>https://sslouis.com/tech/spring/weakhashmap/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/weakhashmap/</guid>
+                <pubDate>Wed, 18 Nov 2020 00:00:00 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;weakhashmap&#34;&gt;WeakHashMap&lt;/h2&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Vector</title>
+                <link>https://sslouis.com/tech/spring/vector/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/vector/</guid>
+                <pubDate>Mon, 09 Nov 2020 00:00:00 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;vector&#34;&gt;Vector&lt;/h2&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Javac</title>
+                <link>https://sslouis.com/tech/javac/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/javac/</guid>
+                <pubDate>Thu, 03 Sep 2020 13:12:27 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description></description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
                         
                     
                 
@@ -438,407 +580,10 @@ Java一直保持着三层类加载器、双亲委派的类加载架构。
             </item>
         
             <item>
-                <title></title>
-                <link>https://sslouis.com/tech/java%E6%A8%A1%E5%9D%97%E5%8C%96%E7%B3%BB%E7%BB%9F/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/java%E6%A8%A1%E5%9D%97%E5%8C%96%E7%B3%BB%E7%BB%9F/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description></description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/mysql/mysql1.0/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/mysql/mysql1.0/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;p&gt;####MySQL逻辑架构&lt;/p&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/mysql/">MySQL</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/hashmap/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/hashmap/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h2 id=&#34;hashmap&#34;&gt;HashMap&lt;/h2&gt;
-&lt;h3 id=&#34;方法&#34;&gt;方法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;default V getOrDefault(Object key,V defaultValue)&lt;/code&gt;
-可以返回默认值defaultValue&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/ioc/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/ioc/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h2 id=&#34;beanfactory和applicationcontext和bean&#34;&gt;BeanFactory和ApplicationContext和Bean&lt;/h2&gt;
-&lt;h3 id=&#34;某一接口具体实现类的选择控制权从调用类中移除转交给第三方决定即由spring容器借由bean配置来进行控制&#34;&gt;某一接口具体实现类的选择控制权从调用类中移除,转交给第三方决定,即由Spring容器借由Bean配置来进行控制.&lt;/h3&gt;
-&lt;h3 id=&#34;类型&#34;&gt;类型&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;构造函数注入&lt;/li&gt;
-&lt;li&gt;属性注入&lt;/li&gt;
-&lt;li&gt;接口注入&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;beanfactory&#34;&gt;BeanFactory&lt;/h3&gt;
-&lt;p&gt;通常称为IoC容器,ApplicationContext为应用上下文.
-BeanFactory是Spring框架的基础设施,面向Spring本身;ApplicationContext面向使用Spring框架的开发者.
-所有可以被Spring容器实例化并管理的Java类都可以成为Bean.&lt;/p&gt;
-&lt;h3 id=&#34;applicationcontext&#34;&gt;ApplicationContext&lt;/h3&gt;
-&lt;h4 id=&#34;实现类&#34;&gt;实现类&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;CLassPathXmlApplicationContext
-&lt;code&gt;ApplicationCOntext ctx = new ClassPathXmlApplicationContext(&amp;quot;com/smart/context/beans.xml&amp;quot;)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;FileSystemXmlApplicationContext&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;applicationcontext在初始化应用上下文时就实例化所有单实例的bean&#34;&gt;ApplicationContext在初始化应用上下文时就实例化所有单实例的Bean.&lt;/h4&gt;
-&lt;h4 id=&#34;javaconfig提供了spring基于类注解的配置方式configuration&#34;&gt;JavaConfig提供了Spring基于类注解的配置方式,@Configuration&lt;/h4&gt;
-&lt;h4 id=&#34;annotationconfigapplicationcontext&#34;&gt;AnnotationConfigApplicationContext&lt;/h4&gt;
-&lt;h4 id=&#34;webapplicationcontext&#34;&gt;WebApplicationContext&lt;/h4&gt;
-&lt;p&gt;专门为Web应用准备的,从WebApplicationContext中可以获得ServletCOntext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.&lt;/p&gt;
-&lt;h5 id=&#34;webapplicationcontextutils&#34;&gt;WebApplicationContextUtils&lt;/h5&gt;
-&lt;h5 id=&#34;为bean添加了三个新的作用域requestsession和global-session&#34;&gt;为Bean添加了三个新的作用域:request,session和global session&lt;/h5&gt;
-&lt;h5 id=&#34;定义了一个常量root_web_application_context_attribute在上下文启动时webapplicationcontextcontext实例即以此为键放置在servletcontext的属性列表中&#34;&gt;定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE,在上下文启动时,WebApplicationContextContext实例即以此为键放置在ServletContext的属性列表中,&lt;/h5&gt;
-&lt;h5 id=&#34;webapplicationcontext初始化&#34;&gt;WebApplicationContext初始化&lt;/h5&gt;
-&lt;h5 id=&#34;父子容器-hierarchicalbeanfactory&#34;&gt;父子容器 HierarchicalBeanFactory&lt;/h5&gt;
-&lt;h3 id=&#34;bean的生命周期&#34;&gt;Bean的生命周期&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&#34; alt=&#34;avatar&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;beanpostprocessoraop动态代理的关键&#34;&gt;BeanPostProcessor(AOP,动态代理的关键)&lt;/h4&gt;
-&lt;h4 id=&#34;heading&#34;&gt;&lt;/h4&gt;
-&lt;p&gt;Bean的作用范围scope=&amp;quot;prototype&amp;quot;时,将Bean返回给调用者,调用者负责Bean后续生命的管理,
-scope=&amp;quot;singleton&amp;quot;,将Bean放入Spring Ioc容器的缓存池中,并将Bean引用返回给调用者,Spring继续对这些Bean进行后续的生命管理.&lt;/p&gt;
-&lt;h4 id=&#34;bean生命周期中的方法分为4类&#34;&gt;Bean生命周期中的方法,分为4类&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Bean自身的方法&lt;br&gt;
-构造函数,Setter,init-method,destroy-method等&lt;/li&gt;
-&lt;li&gt;Bean级生命周期接口方法&lt;br&gt;
-BeanNameAware,BeanFactoryAware,InitializingBean,DisposableBean&lt;/li&gt;
-&lt;li&gt;容器级生命周期接口方法&lt;/li&gt;
-&lt;li&gt;工厂后处理器接口方法&lt;br&gt;
-AspectJWeavingEnabler,CustomAutowireConfigurer,ConfigurationCLassPostProcessor&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;applicationcontext会自动识别postprocessor而beanfactory需要手动调用addbeanpostprocessor&#34;&gt;ApplicationContext会自动识别POstProcessor,而BeanFactory需要手动调用addBeanPostProcessor()&lt;/h4&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/priorityqueue/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/priorityqueue/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h2 id=&#34;priorityqueue--优先级队列&#34;&gt;PriorityQueue  优先级队列&lt;/h2&gt;
-&lt;h3 id=&#34;底层&#34;&gt;底层&lt;/h3&gt;
-&lt;p&gt;使用了堆,可以自我调整的二叉树,对树执行添加(add)和删除(remove)操作,
-可以让最小的元素移动到根,而不必花费时间对元素进行排序.&lt;/p&gt;
-&lt;h3 id=&#34;典型事例&#34;&gt;典型事例&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;任务调度&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;代码待补充&#34;&gt;代码待补充&lt;/h3&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/spring-aop/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/spring-aop/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h3 id=&#34;heading&#34;&gt;&lt;/h3&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/spring-boot/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/spring-boot/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h2 id=&#34;spring-boot&#34;&gt;Spring Boot&lt;/h2&gt;
-&lt;h3 id=&#34;起步依赖&#34;&gt;起步依赖&lt;/h3&gt;
-&lt;h3 id=&#34;heading&#34;&gt;&lt;/h3&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/spring-mvc/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/spring-mvc/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h4 id=&#34;heading&#34;&gt;&lt;/h4&gt;
-&lt;p&gt;Spring MVC框架围绕DispatcherServlet核心展开，它负责截获请求并将其分派给相应的处理器处理。&lt;br&gt;
-Spring MVC框架包括注解驱动控制器、请求及响应的信息处理、视图解析、本地化解析、上传文件解析、异常处理及表单标签绑定等内容。&lt;/p&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
+                <title>Spring事务传播机制</title>
                 <link>https://sslouis.com/tech/spring/spring%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E6%9C%BA%E5%88%B6/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/spring/spring%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E6%9C%BA%E5%88%B6/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                <pubDate>Tue, 30 Jun 2020 12:43:32 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
@@ -890,15 +635,29 @@ Spring MVC框架包括注解驱动控制器、请求及响应的信息处理、�
                 
                     
                         
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring/">Spring</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/%E4%BA%8B%E5%8A%A1/">事务</category>
+                                
+                            
+                        
                     
                 
             </item>
         
             <item>
-                <title></title>
+                <title>Spring事务管理</title>
                 <link>https://sslouis.com/tech/spring/spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/spring/spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                <pubDate>Sun, 28 Jun 2020 20:23:22 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
@@ -986,15 +745,247 @@ ThreadLocal中一个Map,用于存储每个线程的变量副本,Map中元素的�
                 
                     
                         
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring/">Spring</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/%E4%BA%8B%E5%8A%A1/">事务</category>
+                                
+                            
+                        
                     
                 
             </item>
         
             <item>
-                <title></title>
+                <title>Spring MVC</title>
+                <link>https://sslouis.com/tech/spring/spring-mvc/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/spring-mvc/</guid>
+                <pubDate>Mon, 23 Mar 2020 23:53:12 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h4 id=&#34;heading&#34;&gt;&lt;/h4&gt;
+&lt;p&gt;Spring MVC框架围绕DispatcherServlet核心展开，它负责截获请求并将其分派给相应的处理器处理。&lt;br&gt;
+Spring MVC框架包括注解驱动控制器、请求及响应的信息处理、视图解析、本地化解析、上传文件解析、异常处理及表单标签绑定等内容。&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring/">Spring</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>HashMap笔记</title>
+                <link>https://sslouis.com/tech/spring/hashmap/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/hashmap/</guid>
+                <pubDate>Wed, 04 Mar 2020 19:54:43 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;hashmap&#34;&gt;HashMap&lt;/h2&gt;
+&lt;h3 id=&#34;方法&#34;&gt;方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;default V getOrDefault(Object key,V defaultValue)&lt;/code&gt;
+可以返回默认值defaultValue&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>在IoC容器中装配Bean</title>
+                <link>https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/%E5%9C%A8ioc%E5%AE%B9%E5%99%A8%E4%B8%AD%E8%A3%85%E9%85%8Dbean/</guid>
+                <pubDate>Tue, 03 Mar 2020 18:47:47 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h4 id=&#34;概述&#34;&gt;概述&lt;/h4&gt;
+&lt;p&gt;Bean配置信息首先定义了Bean的实现及依赖关系,Spring容器根据各种形式的Bean配置信息在容器内部建立Bean定义注册表;然后根据注册表加载/实例化Bean,并建立Bean和Bean之间的依赖关系;最后将这些准备就绪的Bean放到Bean缓存池中,以供外层的应用程序进行调用.&lt;/p&gt;
+&lt;h3 id=&#34;依赖注入&#34;&gt;依赖注入&lt;/h3&gt;
+&lt;p&gt;属性注入,构造函数注入&lt;/p&gt;
+&lt;h4 id=&#34;属性注入&#34;&gt;属性注入&lt;/h4&gt;
+&lt;p&gt;指通过setXxx()方法注入Bean的属性值或依赖对象,是最常采用的注入方式.&lt;br&gt;
+属性注入要求Bean提供一个默认的构造函数,并为需要注入的属性提供对应的Setter方法.&lt;br&gt;
+Sring先调用Bean的默认构造函数实例化Bean对象,然后通过反射的方式调用Setter方法注入属性值.&lt;br&gt;
+需要注入变量名的大小写问题.&lt;/p&gt;
+&lt;h4 id=&#34;构造函数注入&#34;&gt;构造函数注入&lt;/h4&gt;
+&lt;p&gt;使用构造函数的前提是Bean必须提供带参的构造函数.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按类型匹配入参&lt;/li&gt;
+&lt;li&gt;按索引匹配入参&lt;/li&gt;
+&lt;li&gt;联合使用类型和索引匹配入参&lt;/li&gt;
+&lt;li&gt;通过自身类型反射匹配入参&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;循环依赖问题&#34;&gt;循环依赖问题&lt;/h4&gt;
+&lt;p&gt;如果两个Bean都采用构造函数注入,而且都通过构造函数入参引用对方,就会发生循环依赖问题.&lt;br&gt;
+解决:将构造函数注入方式改为属性注入方式.&lt;/p&gt;
+&lt;h4 id=&#34;工厂方法注入&#34;&gt;工厂方法注入&lt;/h4&gt;
+&lt;h5 id=&#34;非静态工厂方法&#34;&gt;非静态工厂方法&lt;/h5&gt;
+&lt;p&gt;工厂类对外屏蔽了目标类的实例化步骤,调用者甚至无需知道具体的目标类是什么&lt;/p&gt;
+&lt;h5 id=&#34;静态工厂方法&#34;&gt;静态工厂方法&lt;/h5&gt;
+&lt;h4 id=&#34;bean作用域&#34;&gt;Bean作用域&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;singleton 在Spring Ioc容器中仅存在一个Bean实例,Bean以单实例的方式存在&lt;/li&gt;
+&lt;li&gt;prototype 每次在容器中调用Bean时,都返回一个新的实例&lt;/li&gt;
+&lt;li&gt;request 每次HTTP请求都会创建一个新的Bean,仅适用于WebApplicationContext&lt;/li&gt;
+&lt;li&gt;session 同一个HTTP Session共享一个Bean,仅适用于WebApplicationContext&lt;/li&gt;
+&lt;li&gt;globalSession 同一个全局Session共享一个Bean&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;基于注解的配置&#34;&gt;基于注解的配置&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;@Component&lt;/li&gt;
+&lt;li&gt;@Repository&lt;/li&gt;
+&lt;li&gt;@Service&lt;/li&gt;
+&lt;li&gt;@Controller&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;扫描注解定义的bean&#34;&gt;扫描注解定义的Bean&lt;/h5&gt;
+&lt;h5 id=&#34;自动装配bean&#34;&gt;自动装配Bean&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;使用@Autowired进行自动注入&lt;br&gt;
+可以使用@Autowired(required=false)避免抛出异常&lt;br&gt;
+通过@Qualifier(&amp;quot;xx&amp;quot;)匹配限定Bean&lt;br&gt;
+可以对类成员变量及方法的入参进行标注&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;@Autowired
+public void setLogDao(LogDao logDao){
+    this.logDao = logDao;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一般建议在方法上标注@Autowired注解&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;@Resource按名称匹配注入&lt;/li&gt;
+&lt;li&gt;@Scope注解可以指定Bean的作用范围&lt;/li&gt;
+&lt;li&gt;@PostConstruct和@PreDstroy注解可以用在类方法上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;基于java类的配置&#34;&gt;基于Java类的配置&lt;/h4&gt;
+&lt;p&gt;@Configuration,可以为Spring容器提供Bean定义的信息&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring/">Spring</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>TreeMap笔记</title>
                 <link>https://sslouis.com/tech/spring/treemap/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/spring/treemap/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                <pubDate>Thu, 13 Feb 2020 00:00:00 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
@@ -1029,21 +1020,74 @@ ThreadLocal中一个Map,用于存储每个线程的变量副本,Map中元素的�
                 
                     
                         
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/java-collections/">Java Collections</category>
+                                
+                            
+                        
                     
                 
             </item>
         
             <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/vector/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/vector/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                <title>IoC原理</title>
+                <link>https://sslouis.com/tech/spring/ioc/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/ioc/</guid>
+                <pubDate>Fri, 27 Dec 2019 16:22:06 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;h2 id=&#34;vector&#34;&gt;Vector&lt;/h2&gt;
+                    <description>&lt;h2 id=&#34;beanfactory和applicationcontext和bean&#34;&gt;BeanFactory和ApplicationContext和Bean&lt;/h2&gt;
+&lt;h3 id=&#34;某一接口具体实现类的选择控制权从调用类中移除转交给第三方决定即由spring容器借由bean配置来进行控制&#34;&gt;某一接口具体实现类的选择控制权从调用类中移除,转交给第三方决定,即由Spring容器借由Bean配置来进行控制.&lt;/h3&gt;
+&lt;h3 id=&#34;类型&#34;&gt;类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;构造函数注入&lt;/li&gt;
+&lt;li&gt;属性注入&lt;/li&gt;
+&lt;li&gt;接口注入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;beanfactory&#34;&gt;BeanFactory&lt;/h3&gt;
+&lt;p&gt;通常称为IoC容器,ApplicationContext为应用上下文.
+BeanFactory是Spring框架的基础设施,面向Spring本身;ApplicationContext面向使用Spring框架的开发者.
+所有可以被Spring容器实例化并管理的Java类都可以成为Bean.&lt;/p&gt;
+&lt;h3 id=&#34;applicationcontext&#34;&gt;ApplicationContext&lt;/h3&gt;
+&lt;h4 id=&#34;实现类&#34;&gt;实现类&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;CLassPathXmlApplicationContext
+&lt;code&gt;ApplicationCOntext ctx = new ClassPathXmlApplicationContext(&amp;quot;com/smart/context/beans.xml&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;FileSystemXmlApplicationContext&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;applicationcontext在初始化应用上下文时就实例化所有单实例的bean&#34;&gt;ApplicationContext在初始化应用上下文时就实例化所有单实例的Bean.&lt;/h4&gt;
+&lt;h4 id=&#34;javaconfig提供了spring基于类注解的配置方式configuration&#34;&gt;JavaConfig提供了Spring基于类注解的配置方式,@Configuration&lt;/h4&gt;
+&lt;h4 id=&#34;annotationconfigapplicationcontext&#34;&gt;AnnotationConfigApplicationContext&lt;/h4&gt;
+&lt;h4 id=&#34;webapplicationcontext&#34;&gt;WebApplicationContext&lt;/h4&gt;
+&lt;p&gt;专门为Web应用准备的,从WebApplicationContext中可以获得ServletCOntext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.&lt;/p&gt;
+&lt;h5 id=&#34;webapplicationcontextutils&#34;&gt;WebApplicationContextUtils&lt;/h5&gt;
+&lt;h5 id=&#34;为bean添加了三个新的作用域requestsession和global-session&#34;&gt;为Bean添加了三个新的作用域:request,session和global session&lt;/h5&gt;
+&lt;h5 id=&#34;定义了一个常量root_web_application_context_attribute在上下文启动时webapplicationcontextcontext实例即以此为键放置在servletcontext的属性列表中&#34;&gt;定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE,在上下文启动时,WebApplicationContextContext实例即以此为键放置在ServletContext的属性列表中,&lt;/h5&gt;
+&lt;h5 id=&#34;webapplicationcontext初始化&#34;&gt;WebApplicationContext初始化&lt;/h5&gt;
+&lt;h5 id=&#34;父子容器-hierarchicalbeanfactory&#34;&gt;父子容器 HierarchicalBeanFactory&lt;/h5&gt;
+&lt;h3 id=&#34;bean的生命周期&#34;&gt;Bean的生命周期&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&#34; alt=&#34;avatar&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;beanpostprocessoraop动态代理的关键&#34;&gt;BeanPostProcessor(AOP,动态代理的关键)&lt;/h4&gt;
+&lt;h4 id=&#34;heading&#34;&gt;&lt;/h4&gt;
+&lt;p&gt;Bean的作用范围scope=&amp;quot;prototype&amp;quot;时,将Bean返回给调用者,调用者负责Bean后续生命的管理,
+scope=&amp;quot;singleton&amp;quot;,将Bean放入Spring Ioc容器的缓存池中,并将Bean引用返回给调用者,Spring继续对这些Bean进行后续的生命管理.&lt;/p&gt;
+&lt;h4 id=&#34;bean生命周期中的方法分为4类&#34;&gt;Bean生命周期中的方法,分为4类&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Bean自身的方法&lt;br&gt;
+构造函数,Setter,init-method,destroy-method等&lt;/li&gt;
+&lt;li&gt;Bean级生命周期接口方法&lt;br&gt;
+BeanNameAware,BeanFactoryAware,InitializingBean,DisposableBean&lt;/li&gt;
+&lt;li&gt;容器级生命周期接口方法&lt;/li&gt;
+&lt;li&gt;工厂后处理器接口方法&lt;br&gt;
+AspectJWeavingEnabler,CustomAutowireConfigurer,ConfigurationCLassPostProcessor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;applicationcontext会自动识别postprocessor而beanfactory需要手动调用addbeanpostprocessor&#34;&gt;ApplicationContext会自动识别POstProcessor,而BeanFactory需要手动调用addBeanPostProcessor()&lt;/h4&gt;
 </description>
                 
                 
@@ -1072,21 +1116,31 @@ ThreadLocal中一个Map,用于存储每个线程的变量副本,Map中元素的�
                 
                     
                         
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring/">Spring</category>
+                                
+                            
+                        
                     
                 
             </item>
         
             <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/weakhashmap/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/weakhashmap/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                <title>Spring Boot</title>
+                <link>https://sslouis.com/tech/spring/spring-boot/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring/spring-boot/</guid>
+                <pubDate>Fri, 09 Aug 2019 00:00:00 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;h2 id=&#34;weakhashmap&#34;&gt;WeakHashMap&lt;/h2&gt;
+                    <description>&lt;h2 id=&#34;spring-boot&#34;&gt;Spring Boot&lt;/h2&gt;
+&lt;h3 id=&#34;起步依赖&#34;&gt;起步依赖&lt;/h3&gt;
+&lt;h3 id=&#34;heading&#34;&gt;&lt;/h3&gt;
 </description>
                 
                 
@@ -1115,78 +1169,13 @@ ThreadLocal中一个Map,用于存储每个线程的变量副本,Map中元素的�
                 
                     
                         
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h2 id=&#34;类加载器&#34;&gt;类加载器&lt;/h2&gt;
-&lt;h3 id=&#34;三种类型&#34;&gt;三种类型&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;根装载器
-使用C++编写,负责装载JRE的核心类库&lt;/li&gt;
-&lt;li&gt;ExtClassLoader(扩展类装载器) 装载JRE扩展目录ext中的JAR类包&lt;/li&gt;
-&lt;li&gt;AppClassLoader(应用类装载器) 装载Classpath路径下的类包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;全盘负责委托机制&#34;&gt;全盘负责委托机制&lt;/h3&gt;
-&lt;p&gt;先委托父装载器寻找目标类,只有在找不到的情况下才从自己的类路径中查找并装载目标类.&lt;/p&gt;
-&lt;h3 id=&#34;重要方法&#34;&gt;重要方法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Class loadClass(String name)&lt;/code&gt;: name参数指定类装载器需要装载类的名字,必须使用全限定名.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Class defineClass(String name,byte[] b,int off,int len)&lt;/code&gt;:将类文件的字节数组转换成JVM内部的java.lang.Class对象.字节数组可以从本地文件系统,远程网络获取.
-参数name为字节数组对应的全限定类名.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ClassLoader getParent()&lt;/code&gt;:获取类装载器的父装载器.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;class&#34;&gt;Class&lt;/h3&gt;
-&lt;h4 id=&#34;方法&#34;&gt;方法&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;Constructor&lt;/code&gt;
-&lt;code&gt;Method&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Class没有public的构造方法,Class对象是在装载类时由JVM通过调用类装载器中的defineClass()方法自动构造的.
-可以看到加载了哪个类,srcAdd.jsp&lt;/li&gt;
-&lt;li&gt;对于private或protected成员变量和方法
-&lt;code&gt;field.setAccessible(true)&lt;/code&gt;
-&lt;code&gt;method.setAccessible(true)&lt;/code&gt;
-如果JVM的安全管理器设置了相应的安全机制,将抛出SecurityException&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考&amp;lt;精通Spring4.x--企业应用开发实战&amp;gt;&lt;/p&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
                             
-                                <category domain="https://sslouis.com/tech/">tech</category>
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/spring/">Spring</category>
+                                
                             
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
                         
                     
                 
@@ -1196,7 +1185,7 @@ ThreadLocal中一个Map,用于存储每个线程的变量副本,Map中元素的�
                 <title>Spring AOP</title>
                 <link>https://sslouis.com/tech/spring/aop/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/spring/aop/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                <pubDate>Sat, 03 Aug 2019 22:00:21 &#43;0800</pubDate>
                 
                     <author>sslouis22@gmail.com (sslouis)</author>
                 
@@ -1276,6 +1265,346 @@ Spring采用动态代理织入，AspectJ采用编译期织入和类装载期织�
                                     <category domain="https://sslouis.com/tags/aop/">AOP</category>
                                 
                             
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>雪花算法</title>
+                <link>https://sslouis.com/tech/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</guid>
+                <pubDate>Sat, 27 Jul 2019 09:47:32 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h4 id=&#34;特点&#34;&gt;特点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;能满足高并发分布式系统环境下ID不重复&lt;/li&gt;
+&lt;li&gt;基于时间戳，可以保证基本有序递增&lt;/li&gt;
+&lt;li&gt;不依赖第三方的库或者中间件&lt;/li&gt;
+&lt;li&gt;生成效率极高&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Electron的坑</title>
+                <link>https://sslouis.com/tech/web/electron%E7%9A%84%E5%9D%91/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/web/electron%E7%9A%84%E5%9D%91/</guid>
+                <pubDate>Thu, 06 Jun 2019 00:00:00 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h3 id=&#34;1node-installjs卡住&#34;&gt;1.node install.js卡住&lt;/h3&gt;
+&lt;p&gt;可能是网络原因,可以等待或者将npm的下载库改为百度&lt;/p&gt;
+&lt;h3 id=&#34;2发生错误-cannot-find-module-app&#34;&gt;2.发生错误 &amp;quot;Cannot find module app&amp;quot;&lt;/h3&gt;
+&lt;p&gt;原代码长这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var app = require(&#39;app&#39;);
+var BrowserWindow = require(&#39;browser-window&#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改成:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const electron = require(&#39;electron&#39;);
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考:&lt;code&gt;https://stackoverflow.com/questions/39683163/cannot-find-module-app-when-trying-to-run-electron-app&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3loadurl报错&#34;&gt;3.loadUrl报错&lt;/h3&gt;
+&lt;p&gt;修改成&lt;code&gt;loadURL()&lt;/code&gt;
+参考:https://stackoverflow.com/questions/37614054/loadurl-is-not-working-in-electron&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/javascript/">JavaScript</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>实现鼠标滑动div的出现和隐藏</title>
+                <link>https://sslouis.com/tech/web/%E5%AE%9E%E7%8E%B0%E9%BC%A0%E6%A0%87%E6%BB%91%E5%8A%A8div%E7%9A%84%E5%87%BA%E7%8E%B0%E5%92%8C%E9%9A%90%E8%97%8F/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/web/%E5%AE%9E%E7%8E%B0%E9%BC%A0%E6%A0%87%E6%BB%91%E5%8A%A8div%E7%9A%84%E5%87%BA%E7%8E%B0%E5%92%8C%E9%9A%90%E8%97%8F/</guid>
+                <pubDate>Thu, 17 Jan 2019 19:37:22 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在工作中遇到需要通过鼠标滑动出现和隐藏菜单栏的功能,经过研究发现可以直接通过css原生方法解决。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;正文&#34;&gt;正文&lt;/h2&gt;
+&lt;h5 id=&#34;html和css文件分别如下&#34;&gt;html和css文件分别如下&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&amp;quot;big&amp;quot;&amp;gt;
+	&amp;lt;div id=&amp;quot;small&amp;quot;&amp;gt;
+	&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;#big:hover #small{
+	&amp;lt;!--鼠标停留在外面div时小div的状态为显示--&amp;gt;
+	display:inline-block;
+}
+#middle{
+	display:none;
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/html/">html</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/css/">css</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>红黑树</title>
+                <link>https://sslouis.com/tech/%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/%E7%AE%97%E6%B3%95/%E7%BA%A2%E9%BB%91%E6%A0%91/</guid>
+                <pubDate>Thu, 13 Sep 2018 00:00:00 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;1.特点:
+1.1节点都有颜色.
+1.2在插入和删除的过程中,要遵循保持这些颜色的不同排列的规则.
+2.红黑规则:
+2.1每一个节点不是红色的就是黑色的.
+2.2根总是黑色的.
+2.3如果节点是红色的,则它的子节点必须是黑色的(反之倒不一定必须为真).
+2.4从根到叶节点或空子节点的每条路径,必须包含相同数目的黑色节点.
+(空子节点是指非叶节点本可能有,但实际上没有的那个子节点)
+3.修正违规的情况 &lt;br&gt;
+3.1改变节点的颜色.
+3.2执行旋转操作.
+4.旋转
+4.1目的:使一些节点上升,一些节点下降,帮助树平衡. &lt;br&gt;
+保证不破坏二叉搜索树的特征.
+4.2简单旋转
+选择一个节点作为旋转的顶端,如果做一次右旋,这个顶端节点将会向下和向右移动到它右子节点的为止.
+它的左子节点将会上移到它原来的位置上. &lt;br&gt;
+如果做右旋,顶端节点必须有一个左子节点.做左旋,顶端节点必须有一个右子节点.
+5.插入一个新节点
+5.1在下行路途中的颜色变换
+规则:每当查找例程遇到一个有两个红色子节点的黑色节点时,它必须把子节点变为黑色,而把父节点变为红色(除非父节点为根结点,根总是黑色的)
+5.2插入节点之后的旋转
+X是一个特殊的节点,P是X的父,G是X的祖父节点(P的父节点).
+首先,插入的节点总是红色的
+概念:内侧子孙,外侧子孙
+5.2.1分三种情况讨论
+0.1P是黑色的:不违反规则,插入完成.
+0.2P是红色的,X是G的一个外侧子孙节点.
+改变X的祖父节点G的颜色,改变X的父节点P的颜色,以X的祖父节点G为顶旋转.
+0.3P是红色的,X是G的一个内侧子孙节点.
+改变X的祖父节点的颜色,改变X的颜色,用X的父节点作为顶旋转,向X上升的方向旋转,再以X的祖父节点为顶旋转,向X上升的方向旋转.
+在下行路途中的颜色变换消除了旋转造成树的上方任何规则的违规情况.
+6.删除
+删除过程非常复杂,一般情况下为删除的节点做标记而不实际地删除它.
+7.AVL树
+AVL树中每个节点存储一个额外的数据:它的左子树和右子树的高度差.这个差值不会大于1.
+插入之后,检查新节点插入点所在的最低子树的根,如果它的子节点的高度相差大于1,执行一次或者两次旋转使它们的高度相等,然后算法向上移动,检查上面的节点,必要时均衡高度,这次检测检查所有路径一直向上,直到根位置.
+AVL树查找的时间复杂度为O(logN),因为树一定是平衡的,但是,由于插入(或删除)一个节点时需要扫描两趟树,一次向下查找插入点,一次向上平衡树,AVL树不如红-黑树效率高,也不如红-黑树常用.&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title></title>
+                <link>https://sslouis.com/tech/java%E6%A8%A1%E5%9D%97%E5%8C%96%E7%B3%BB%E7%BB%9F/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/java%E6%A8%A1%E5%9D%97%E5%8C%96%E7%B3%BB%E7%BB%9F/</guid>
+                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description></description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title></title>
+                <link>https://sslouis.com/tech/mysql/mysql1.0/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/mysql/mysql1.0/</guid>
+                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;####MySQL逻辑架构&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/mysql/">MySQL</category>
+                            
+                        
+                    
+                
+                
+                
+                    
                         
                     
                 
