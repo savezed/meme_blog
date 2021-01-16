@@ -23,10 +23,275 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 23 Dec 2020 08:49:56 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 16 Jan 2021 13:20:45 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://sslouis.com/rss.xml" />
         
+        
+            <item>
+                <title>Redis</title>
+                <link>https://sslouis.com/tech/redis/redis/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/redis/redis/</guid>
+                <pubDate>Fri, 01 Jan 2021 17:06:33 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;redis数据结构&#34;&gt;Redis数据结构&lt;/h2&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>类文件结构</title>
+                <link>https://sslouis.com/tech/jvm/%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/jvm/%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
+                <pubDate>Wed, 30 Dec 2020 20:13:57 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;class类文件的结构&#34;&gt;Class类文件的结构&lt;/h2&gt;
+&lt;p&gt;Class文件是一组以8个字节为基础单位的二进制流，&lt;/p&gt;
+&lt;p&gt;CLass文件格式：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;类型&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;名称&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;数量&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/jvm/">JVM</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Java高效并发</title>
+                <link>https://sslouis.com/tech/jvm/java%E9%AB%98%E6%95%88%E5%B9%B6%E5%8F%91/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/jvm/java%E9%AB%98%E6%95%88%E5%B9%B6%E5%8F%91/</guid>
+                <pubDate>Sat, 26 Dec 2020 10:04:10 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;锁优化&#34;&gt;锁优化&lt;/h2&gt;
+&lt;h3 id=&#34;自旋锁与自适应自旋&#34;&gt;自旋锁与自适应自旋&lt;/h3&gt;
+&lt;p&gt;让线程执行一个忙循环（自旋），等待上一个线程释放锁的过程。&lt;br&gt;
+JDK6之后它是默认开启的，自旋次数的默认值是10次。&lt;br&gt;
+自适应自旋会根据上一次同一个锁上的自旋时间及锁的拥有者的状态来决定。&lt;/p&gt;
+&lt;h3 id=&#34;锁消除&#34;&gt;锁消除&lt;/h3&gt;
+&lt;p&gt;锁消除是指虚拟机即时编译器在运行时，对一些代码要求同步，但是对被检测到不可能存在共享数据竞争的锁进行消除。&lt;/p&gt;
+&lt;h3 id=&#34;锁粗化&#34;&gt;锁粗化&lt;/h3&gt;
+&lt;p&gt;如果一系列的连续操作都对同一个对象反复加锁和解锁，甚至加锁操作是出现在循环体之中的，即使没有线程竞争，频繁地进行互斥同步操作也会导致不必要的性能损耗。
+如果虚拟机探测到有这样一串零碎的操作都对同一个对象加锁，将会把加锁同步的范围扩展（粗化）到整个操作序列的外部。&lt;/p&gt;
+&lt;h3 id=&#34;轻量级锁&#34;&gt;轻量级锁&lt;/h3&gt;
+&lt;h3 id=&#34;偏向锁&#34;&gt;偏向锁&lt;/h3&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/jvm/">JVM</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Java泛型的坑</title>
+                <link>https://sslouis.com/tech/jvm/java%E6%B3%9B%E5%9E%8B%E7%9A%84%E5%9D%91/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/jvm/java%E6%B3%9B%E5%9E%8B%E7%9A%84%E5%9D%91/</guid>
+                <pubDate>Fri, 25 Dec 2020 13:53:02 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;今天同事出现了类型检查的问题，其本质原因是Java在编译的时候将泛型直接擦除了，没有做类型验证。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public static List&amp;lt;UnopDictData&amp;gt; getDictCache(String key) {
+        Object cacheObj = SpringUtils.getBean(RedisCache.class).getCacheObject(getCacheKey(key));
+        if (ObjectUtil.isNotNull(cacheObj)) {
+            List&amp;lt;UnopDictData&amp;gt; dictDatas = StringUtil.cast(cacheObj);
+            return dictDatas;
+        }
+        return null;
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;同事写了这么一段代码，在后面对他调用的时候，发现list还是从&lt;code&gt;Redis&lt;/code&gt;取到的&lt;code&gt;LinkedHashMap&lt;/code&gt;,此时就报了类型检查的异常。&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/jvm/">JVM</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/java/">Java</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>commit过多解决方案</title>
+                <link>https://sslouis.com/tech/git%E8%A7%A3%E5%86%B3commit%E8%BF%87%E5%A4%9A/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/git%E8%A7%A3%E5%86%B3commit%E8%BF%87%E5%A4%9A/</guid>
+                <pubDate>Wed, 23 Dec 2020 13:47:19 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;pre&gt;&lt;code&gt;$ git reset HEAD~5
+$ git add .
+$ git commit -am &amp;quot;Here&#39;s the bug fix that closes #28&amp;quot;
+$ git push --force
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/git/">git</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Javac编译优化</title>
@@ -538,6 +803,125 @@ Java一直保持着三层类加载器、双亲委派的类加载架构。
 引入线程上下文类加载器（Thread Context ClassLoader）,通过该类父类加载器去请求子类加载器完成加载的行为。&lt;/li&gt;
 &lt;li&gt;第三次被破坏
 热部署，OSGi通过类加载器实现热部署。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/jvm/">JVM</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://sslouis.com/tags/jvm/">JVM</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>JVM的内存模型</title>
+                <link>https://sslouis.com/tech/jvm/jvm%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/jvm/jvm%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</guid>
+                <pubDate>Mon, 03 Aug 2020 00:00:00 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;blockquote&gt;
+&lt;p&gt;介绍JVM中各个区域的作用、服务对象&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;jvm内存模型&#34;&gt;JVM内存模型&lt;/h2&gt;
+&lt;h3 id=&#34;程序计数器&#34;&gt;程序计数器&lt;/h3&gt;
+&lt;h3 id=&#34;java虚拟机栈&#34;&gt;Java虚拟机栈&lt;/h3&gt;
+&lt;p&gt;###本地方法栈&lt;/p&gt;
+&lt;h3 id=&#34;java堆&#34;&gt;Java堆&lt;/h3&gt;
+&lt;p&gt;Java堆唯一目的是存放对象实例，它也是垃圾收集器管理的内存区域。&lt;/p&gt;
+&lt;h3 id=&#34;方法区method-area&#34;&gt;方法区（Method Area）&lt;/h3&gt;
+&lt;h3 id=&#34;运行时常量池&#34;&gt;运行时常量池&lt;/h3&gt;
+&lt;h3 id=&#34;直接内存&#34;&gt;直接内存&lt;/h3&gt;
+&lt;h2 id=&#34;垃圾收集算法&#34;&gt;垃圾收集算法&lt;/h2&gt;
+&lt;h3 id=&#34;引用计数算法&#34;&gt;引用计数算法&lt;/h3&gt;
+&lt;h3 id=&#34;可达性分析算法&#34;&gt;可达性分析算法&lt;/h3&gt;
+&lt;p&gt;通过一系列称为&amp;quot;GC Roots&amp;quot;的根对象作为起始节点集，从这些节点开始，根据引用关系项下搜索，
+搜索过程所走过的路径称为&amp;quot;引用链&amp;quot;，如果某个对象到GC Roots间没有任何引用链项链，
+或者用图论的话来说就是GC Roots到这个对象不可达时，则证明此对象是不可能再被使用的。&lt;/p&gt;
+&lt;h4 id=&#34;强引用软引用弱引用虚引用&#34;&gt;强引用，软引用，弱引用，虚引用&lt;/h4&gt;
+&lt;h3 id=&#34;方法区的回收&#34;&gt;方法区的回收&lt;/h3&gt;
+&lt;p&gt;主要回收废弃的常量和不再使用的类型。&lt;/p&gt;
+&lt;h3 id=&#34;分代收集理论&#34;&gt;分代收集理论&lt;/h3&gt;
+&lt;h3 id=&#34;标记-清除算法&#34;&gt;标记-清除算法&lt;/h3&gt;
+&lt;h3 id=&#34;标记-复制算法&#34;&gt;标记-复制算法&lt;/h3&gt;
+&lt;h3 id=&#34;标记-整理算法&#34;&gt;标记-整理算法&lt;/h3&gt;
+&lt;p&gt;##HotSpot的算法细节实现
+###前置知识
+####根节点枚举
+枚举根节点必须是要停顿的。&lt;br&gt;
+在HotSpot中使用OopMap的数据结构来获取对象引用的位置
+####安全点
+####安全区域&lt;/p&gt;
+&lt;h2 id=&#34;经典垃圾收集器&#34;&gt;经典垃圾收集器&lt;/h2&gt;
+&lt;h3 id=&#34;1serial收集器&#34;&gt;1.Serial收集器&lt;/h3&gt;
+&lt;p&gt;它是新生代收集器，它在进行垃圾收集时，必须暂停其他所有工作线程。&lt;br&gt;
+简单高效。&lt;/p&gt;
+&lt;h3 id=&#34;2parnew收集器&#34;&gt;2.ParNew收集器&lt;/h3&gt;
+&lt;p&gt;它是Serial收集器的多线程并行版本，一般与CMS收集器配合工作。&lt;/p&gt;
+&lt;h3 id=&#34;3parallel-scavenge收集器pærəlel-skævɪndʒ&#34;&gt;3.Parallel Scavenge收集器（/&#39;pærəlel/ /&#39;skævɪn(d)ʒ/）&lt;/h3&gt;
+&lt;p&gt;它是新生代收集器，主要关注于达到一个可控制的吞吐量。&lt;/p&gt;
+&lt;h3 id=&#34;4serial-old收集器&#34;&gt;4.Serial Old收集器&lt;/h3&gt;
+&lt;p&gt;它是Serial收集器的老年代版本，使用标记-整理算法。&lt;/p&gt;
+&lt;h3 id=&#34;5parallel-old收集器&#34;&gt;5.Parallel Old收集器&lt;/h3&gt;
+&lt;h3 id=&#34;6cms收集器&#34;&gt;6.CMS收集器&lt;/h3&gt;
+&lt;p&gt;它是一种以获取最短回收停顿时间为目标的收集器。&lt;/p&gt;
+&lt;h4 id=&#34;运作过程&#34;&gt;运作过程：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;初始标记&lt;/li&gt;
+&lt;li&gt;并发标记&lt;/li&gt;
+&lt;li&gt;重新标记&lt;/li&gt;
+&lt;li&gt;并发清除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;缺点&#34;&gt;缺点：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;空间碎片过多。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;7garbage-first收集器&#34;&gt;7.Garbage First收集器&lt;/h3&gt;
+&lt;h2 id=&#34;内存分配与回收策略&#34;&gt;内存分配与回收策略&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1.对象优先在Eden分配&lt;/li&gt;
+&lt;li&gt;2.大对象直接进入老年代&lt;/li&gt;
+&lt;li&gt;3.长期存活的对象将进入老年代&lt;/li&gt;
+&lt;li&gt;4.动态对象年龄判定&lt;br&gt;
+如果在Survivor空间中低于或等于某年龄的所有对象大小的总和大于Survivor空间的一半，
+年龄大于或等于该年龄的对啊ing就可以直接进入老年代。&lt;/li&gt;
+&lt;li&gt;5.空间分配担保&lt;/li&gt;
 &lt;/ul&gt;
 </description>
                 
@@ -1598,6 +1982,46 @@ AVL树查找的时间复杂度为O(logN),因为树一定是平衡的,但是,由�
                         
                             
                                 <category domain="https://sslouis.com/tech/mysql/">MySQL</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title></title>
+                <link>https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+&lt;p&gt;SSL:Secure Sockets Layer安全套接层
+TLS：Transport Layer Sercurity传输层安全&lt;/p&gt;
+&lt;h3 id=&#34;ssl&#34;&gt;SSL&lt;/h3&gt;
+&lt;h3 id=&#34;基本运行过程&#34;&gt;基本运行过程&lt;/h3&gt;
+&lt;p&gt;SSL/TLS协议的基本思路是采用公钥加密法。&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
                             
                         
                     
