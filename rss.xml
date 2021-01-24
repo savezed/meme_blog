@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sat, 16 Jan 2021 13:20:45 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 24 Jan 2021 21:34:14 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://sslouis.com/rss.xml" />
         
@@ -248,52 +248,6 @@ JDK6之后它是默认开启的，自旋次数的默认值是10次。&lt;br&gt;
             </item>
         
             <item>
-                <title>commit过多解决方案</title>
-                <link>https://sslouis.com/tech/git%E8%A7%A3%E5%86%B3commit%E8%BF%87%E5%A4%9A/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/git%E8%A7%A3%E5%86%B3commit%E8%BF%87%E5%A4%9A/</guid>
-                <pubDate>Wed, 23 Dec 2020 13:47:19 &#43;0800</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;pre&gt;&lt;code&gt;$ git reset HEAD~5
-$ git add .
-$ git commit -am &amp;quot;Here&#39;s the bug fix that closes #28&amp;quot;
-$ git push --force
-&lt;/code&gt;&lt;/pre&gt;</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://sslouis.com/tags/git/">git</category>
-                                
-                            
-                        
-                    
-                
-            </item>
-        
-            <item>
                 <title>Javac编译优化</title>
                 <link>https://sslouis.com/tech/jvm/javac/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/jvm/javac/</guid>
@@ -504,7 +458,7 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
             </item>
         
             <item>
-                <title>类加载器</title>
+                <title>类加载器是什么？</title>
                 <link>https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/spring/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
                 <pubDate>Sun, 06 Dec 2020 18:28:36 &#43;0800</pubDate>
