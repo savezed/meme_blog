@@ -61,7 +61,7 @@
         "inLanguage" : "zh-CN",
         "articleSection": "tech",
         "wordCount":  1026 ,
-        "image": ["https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"],
+        "image": "https://sslouis.com/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
             "description": "Viva La Vida",
@@ -89,8 +89,7 @@
 
     
 
-<meta name="twitter:card" content="summary_large_image" />
-
+<meta name="twitter:card" content="summary" />
 
 
     
@@ -101,8 +100,8 @@
 <meta property="og:description" content="BeanFactory和ApplicationContext和Bean 某一接口具体实……" />
 <meta property="og:url" content="https://sslouis.com/tech/spring/ioc/" />
 <meta property="og:site_name" content="sslouis" />
-<meta property="og:locale" content="zh" /><meta property="og:image" content="https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" />
-<meta property="og:type" content="article" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://sslouis.com/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2019-12-27T16:22:06&#43;08:00" />
     <meta property="article:modified_time" content="2020-12-22T13:27:22&#43;08:00" />
     
@@ -249,14 +248,14 @@ BeanFactory是Spring框架的基础设施,面向Spring本身;ApplicationContext�
 <h4 id="javaconfig提供了spring基于类注解的配置方式configuration"><a href="#javaconfig提供了spring基于类注解的配置方式configuration" class="anchor-link">#</a>JavaConfig提供了Spring基于类注解的配置方式,@Configuration</h4>
 <h4 id="annotationconfigapplicationcontext"><a href="#annotationconfigapplicationcontext" class="anchor-link">#</a>AnnotationConfigApplicationContext</h4>
 <h4 id="webapplicationcontext"><a href="#webapplicationcontext" class="anchor-link">#</a>WebApplicationContext</h4>
-<p>专门为Web应用准备的,从WebApplicationContext中可以获得ServletCOntext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.</p>
+<p>专门为Web应用准备的,从WebApplicationContext中可以获得ServletContext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.</p>
 <h5 id="webapplicationcontextutils"><a href="#webapplicationcontextutils" class="anchor-link">#</a>WebApplicationContextUtils</h5>
 <h5 id="为bean添加了三个新的作用域requestsession和global-session"><a href="#为bean添加了三个新的作用域requestsession和global-session" class="anchor-link">#</a>为Bean添加了三个新的作用域:request,session和global session</h5>
 <h5 id="定义了一个常量root_web_application_context_attribute在上下文启动时webapplicationcontextcontext实例即以此为键放置在servletcontext的属性列表中"><a href="#定义了一个常量root_web_application_context_attribute在上下文启动时webapplicationcontextcontext实例即以此为键放置在servletcontext的属性列表中" class="anchor-link">#</a>定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE,在上下文启动时,WebApplicationContextContext实例即以此为键放置在ServletContext的属性列表中,</h5>
 <h5 id="webapplicationcontext初始化"><a href="#webapplicationcontext初始化" class="anchor-link">#</a>WebApplicationContext初始化</h5>
 <h5 id="父子容器-hierarchicalbeanfactory"><a href="#父子容器-hierarchicalbeanfactory" class="anchor-link">#</a>父子容器 HierarchicalBeanFactory</h5>
 <h3 id="bean的生命周期"><a href="#bean的生命周期" class="anchor-link">#</a>Bean的生命周期</h3>
-<p><img src="https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="avatar"></p>
+<p><img src="" alt="avatar"></p>
 <h4 id="beanpostprocessoraop动态代理的关键"><a href="#beanpostprocessoraop动态代理的关键" class="anchor-link">#</a>BeanPostProcessor(AOP,动态代理的关键)</h4>
 <h4 id="heading"><a href="#heading" class="anchor-link">#</a></h4>
 <p>Bean的作用范围scope=&quot;prototype&quot;时,将Bean返回给调用者,调用者负责Bean后续生命的管理,

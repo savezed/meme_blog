@@ -23,10 +23,138 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 19 Feb 2021 21:34:32 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 02 Mar 2021 18:09:10 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://sslouis.com/rss.xml" />
         
+        
+            <item>
+                <title>B</title>
+                <link>https://sslouis.com/tech/spring-boot%E6%98%AF%E6%80%8E%E4%B9%88%E5%90%AF%E5%8A%A8%E7%9A%84/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/spring-boot%E6%98%AF%E6%80%8E%E4%B9%88%E5%90%AF%E5%8A%A8%E7%9A%84/</guid>
+                <pubDate>Wed, 24 Feb 2021 19:01:50 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;我们都知道Spring Boot启动只有一行代码，那就是
+&lt;code&gt;SpringApplication.run(AdminApplication.class, args)&lt;/code&gt;
+那它到底做了些什么呢？今天我们就来一探究竟。
+先看这个&lt;code&gt;run&lt;/code&gt;方法的源码。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ConfigurableApplicationContext&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;c1&#34;&gt;//一个计时的工具，我们忽略
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;StopWatch&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stopWatch&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StopWatch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;stopWatch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;ConfigurableApplicationContext&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;context&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;Collection&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SpringBootExceptionReporter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exceptionReporters&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;configureHeadlessProperty&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+        &lt;span class=&#34;c1&#34;&gt;//获取监听器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;SpringApplicationRunListeners&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;listeners&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getRunListeners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;listeners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;starting&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;try&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;ApplicationArguments&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;applicationArguments&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DefaultApplicationArguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;c1&#34;&gt;//根据SpringApplicationRunListeners以及参数来准备环境
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;ConfigurableEnvironment&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;environment&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;prepareEnvironment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;listeners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;applicationArguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;configureIgnoreBeanInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;c1&#34;&gt;//准备Banner打印器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;Banner&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;printedBanner&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;printBanner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;c1&#34;&gt;//创建Spring容器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;createApplicationContext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;exceptionReporters&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getSpringFactoriesInstances&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SpringBootExceptionReporter&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;
+					&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ConfigurableApplicationContext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;},&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;c1&#34;&gt;//Spring容器前置处理
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;prepareContext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;listeners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;applicationArguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;printedBanner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;c1&#34;&gt;//刷新容器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;refreshContext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;c1&#34;&gt;//Spring容器后置处理
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;afterRefresh&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;applicationArguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;stopWatch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;stop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;logStartupInfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+				&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StartupInfoLogger&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;mainApplicationClass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;logStarted&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getApplicationLog&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stopWatch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+			&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;listeners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;started&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;c1&#34;&gt;//执行Runners
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;callRunners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;applicationArguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Throwable&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;handleRunFailure&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exceptionReporters&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;listeners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+			&lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;IllegalStateException&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+		&lt;span class=&#34;k&#34;&gt;try&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;listeners&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;running&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;catch&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Throwable&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;n&#34;&gt;handleRunFailure&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exceptionReporters&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+			&lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;IllegalStateException&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ex&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>SS是什么</title>
+                <link>https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+                <pubDate>Wed, 13 Jan 2021 15:13:00 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+&lt;p&gt;SSL:Secure Sockets Layer安全套接层
+TLS：Transport Layer Sercurity传输层安全&lt;/p&gt;
+&lt;h3 id=&#34;ssl&#34;&gt;SSL&lt;/h3&gt;
+&lt;h3 id=&#34;基本运行过程&#34;&gt;基本运行过程&lt;/h3&gt;
+&lt;p&gt;SSL/TLS协议的基本思路是采用公钥加密法。&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Redis</title>
@@ -649,6 +777,489 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
             </item>
         
             <item>
+                <title>MySQL逻辑架构</title>
+                <link>https://sslouis.com/tech/mysql/mysql1.0/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/mysql/mysql1.0/</guid>
+                <pubDate>Sun, 11 Oct 2020 14:20:00 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;####MySQL逻辑架构&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/mysql/">MySQL</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>cron的计算实现</title>
+                <link>https://sslouis.com/tech/cron%E7%9A%84%E8%AE%A1%E7%AE%97%E5%AE%9E%E7%8E%B0/</link>
+                <guid isPermaLink="true">https://sslouis.com/tech/cron%E7%9A%84%E8%AE%A1%E7%AE%97%E5%AE%9E%E7%8E%B0/</guid>
+                <pubDate>Tue, 08 Sep 2020 13:12:27 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;pre&gt;&lt;code&gt;public Date getTimeAfter(Date afterTime) {
+
+        // Computation is based on Gregorian year only.
+        // 获取当前时区的日历对象
+        Calendar cl = new java.util.GregorianCalendar(getTimeZone()); 
+
+        // move ahead one second, since we&#39;re computing the time *after* the
+        // given time
+        // 向前进1秒
+        afterTime = new Date(afterTime.getTime() + 1000);
+        // CronTrigger does not deal with milliseconds
+        cl.setTime(afterTime);
+        cl.set(Calendar.MILLISECOND, 0);
+
+        boolean gotOne = false;
+        // loop until we&#39;ve computed the next time, or we&#39;ve past the endTime
+        while (!gotOne) {
+
+            //if (endTime != null &amp;amp;&amp;amp; cl.getTime().after(endTime)) return null;
+            if(cl.get(Calendar.YEAR) &amp;gt; 2999) { // prevent endless loop...
+                return null;
+            }
+
+            SortedSet&amp;lt;Integer&amp;gt; st = null;
+            int t = 0;
+
+            int sec = cl.get(Calendar.SECOND);
+            int min = cl.get(Calendar.MINUTE);
+
+            // get second.................................................
+            st = seconds.tailSet(sec);
+            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
+                sec = st.first();
+            } else {
+                sec = seconds.first();
+                min++;
+                cl.set(Calendar.MINUTE, min);
+            }
+            cl.set(Calendar.SECOND, sec);
+
+            min = cl.get(Calendar.MINUTE);
+            int hr = cl.get(Calendar.HOUR_OF_DAY);
+            t = -1;
+
+            // get minute.................................................
+            st = minutes.tailSet(min);
+            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
+                t = min;
+                min = st.first();
+            } else {
+                min = minutes.first();
+                hr++;
+            }
+            if (min != t) {
+                cl.set(Calendar.SECOND, 0);
+                cl.set(Calendar.MINUTE, min);
+                setCalendarHour(cl, hr);
+                continue;
+            }
+            cl.set(Calendar.MINUTE, min);
+
+            hr = cl.get(Calendar.HOUR_OF_DAY);
+            int day = cl.get(Calendar.DAY_OF_MONTH);
+            t = -1;
+
+            // get hour...................................................
+            st = hours.tailSet(hr);
+            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
+                t = hr;
+                hr = st.first();
+            } else {
+                hr = hours.first();
+                day++;
+            }
+            if (hr != t) {
+                cl.set(Calendar.SECOND, 0);
+                cl.set(Calendar.MINUTE, 0);
+                cl.set(Calendar.DAY_OF_MONTH, day);
+                setCalendarHour(cl, hr);
+                continue;
+            }
+            cl.set(Calendar.HOUR_OF_DAY, hr);
+
+            day = cl.get(Calendar.DAY_OF_MONTH);
+            int mon = cl.get(Calendar.MONTH) + 1;
+            // &#39;+ 1&#39; because calendar is 0-based for this field, and we are
+            // 1-based
+            t = -1;
+            int tmon = mon;
+            
+            // get day...................................................
+            boolean dayOfMSpec = !daysOfMonth.contains(NO_SPEC);
+            boolean dayOfWSpec = !daysOfWeek.contains(NO_SPEC);
+            if (dayOfMSpec &amp;amp;&amp;amp; !dayOfWSpec) { // get day by day of month rule
+                st = daysOfMonth.tailSet(day);
+                if (lastdayOfMonth) {
+                    if(!nearestWeekday) {
+                        t = day;
+                        day = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
+                        day -= lastdayOffset;
+                        if(t &amp;gt; day) {
+                            mon++;
+                            if(mon &amp;gt; 12) { 
+                                mon = 1;
+                                tmon = 3333; // ensure test of mon != tmon further below fails
+                                cl.add(Calendar.YEAR, 1);
+                            }
+                            day = 1;
+                        }
+                    } else {
+                        t = day;
+                        day = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
+                        day -= lastdayOffset;
+                        
+                        java.util.Calendar tcal = java.util.Calendar.getInstance(getTimeZone());
+                        tcal.set(Calendar.SECOND, 0);
+                        tcal.set(Calendar.MINUTE, 0);
+                        tcal.set(Calendar.HOUR_OF_DAY, 0);
+                        tcal.set(Calendar.DAY_OF_MONTH, day);
+                        tcal.set(Calendar.MONTH, mon - 1);
+                        tcal.set(Calendar.YEAR, cl.get(Calendar.YEAR));
+                        
+                        int ldom = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
+                        int dow = tcal.get(Calendar.DAY_OF_WEEK);
+
+                        if(dow == Calendar.SATURDAY &amp;amp;&amp;amp; day == 1) {
+                            day += 2;
+                        } else if(dow == Calendar.SATURDAY) {
+                            day -= 1;
+                        } else if(dow == Calendar.SUNDAY &amp;amp;&amp;amp; day == ldom) { 
+                            day -= 2;
+                        } else if(dow == Calendar.SUNDAY) { 
+                            day += 1;
+                        }
+                    
+                        tcal.set(Calendar.SECOND, sec);
+                        tcal.set(Calendar.MINUTE, min);
+                        tcal.set(Calendar.HOUR_OF_DAY, hr);
+                        tcal.set(Calendar.DAY_OF_MONTH, day);
+                        tcal.set(Calendar.MONTH, mon - 1);
+                        Date nTime = tcal.getTime();
+                        if(nTime.before(afterTime)) {
+                            day = 1;
+                            mon++;
+                        }
+                    }
+                } else if(nearestWeekday) {
+                    t = day;
+                    day = daysOfMonth.first();
+
+                    java.util.Calendar tcal = java.util.Calendar.getInstance(getTimeZone());
+                    tcal.set(Calendar.SECOND, 0);
+                    tcal.set(Calendar.MINUTE, 0);
+                    tcal.set(Calendar.HOUR_OF_DAY, 0);
+                    tcal.set(Calendar.DAY_OF_MONTH, day);
+                    tcal.set(Calendar.MONTH, mon - 1);
+                    tcal.set(Calendar.YEAR, cl.get(Calendar.YEAR));
+                    
+                    int ldom = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
+                    int dow = tcal.get(Calendar.DAY_OF_WEEK);
+
+                    if(dow == Calendar.SATURDAY &amp;amp;&amp;amp; day == 1) {
+                        day += 2;
+                    } else if(dow == Calendar.SATURDAY) {
+                        day -= 1;
+                    } else if(dow == Calendar.SUNDAY &amp;amp;&amp;amp; day == ldom) { 
+                        day -= 2;
+                    } else if(dow == Calendar.SUNDAY) { 
+                        day += 1;
+                    }
+                        
+                
+                    tcal.set(Calendar.SECOND, sec);
+                    tcal.set(Calendar.MINUTE, min);
+                    tcal.set(Calendar.HOUR_OF_DAY, hr);
+                    tcal.set(Calendar.DAY_OF_MONTH, day);
+                    tcal.set(Calendar.MONTH, mon - 1);
+                    Date nTime = tcal.getTime();
+                    if(nTime.before(afterTime)) {
+                        day = daysOfMonth.first();
+                        mon++;
+                    }
+                } else if (st != null &amp;amp;&amp;amp; st.size() != 0) {
+                    t = day;
+                    day = st.first();
+                    // make sure we don&#39;t over-run a short month, such as february
+                    int lastDay = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
+                    if (day &amp;gt; lastDay) {
+                        day = daysOfMonth.first();
+                        mon++;
+                    }
+                } else {
+                    day = daysOfMonth.first();
+                    mon++;
+                }
+                
+                if (day != t || mon != tmon) {
+                    cl.set(Calendar.SECOND, 0);
+                    cl.set(Calendar.MINUTE, 0);
+                    cl.set(Calendar.HOUR_OF_DAY, 0);
+                    cl.set(Calendar.DAY_OF_MONTH, day);
+                    cl.set(Calendar.MONTH, mon - 1);
+                    // &#39;- 1&#39; because calendar is 0-based for this field, and we
+                    // are 1-based
+                    continue;
+                }
+            } else if (dayOfWSpec &amp;amp;&amp;amp; !dayOfMSpec) { // get day by day of week rule
+                if (lastdayOfWeek) { // are we looking for the last XXX day of
+                    // the month?
+                    int dow = daysOfWeek.first(); // desired
+                    // d-o-w
+                    int cDow = cl.get(Calendar.DAY_OF_WEEK); // current d-o-w
+                    int daysToAdd = 0;
+                    if (cDow &amp;lt; dow) {
+                        daysToAdd = dow - cDow;
+                    }
+                    if (cDow &amp;gt; dow) {
+                        daysToAdd = dow + (7 - cDow);
+                    }
+
+                    int lDay = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
+
+                    if (day + daysToAdd &amp;gt; lDay) { // did we already miss the
+                        // last one?
+                        cl.set(Calendar.SECOND, 0);
+                        cl.set(Calendar.MINUTE, 0);
+                        cl.set(Calendar.HOUR_OF_DAY, 0);
+                        cl.set(Calendar.DAY_OF_MONTH, 1);
+                        cl.set(Calendar.MONTH, mon);
+                        // no &#39;- 1&#39; here because we are promoting the month
+                        continue;
+                    }
+
+                    // find date of last occurrence of this day in this month...
+                    while ((day + daysToAdd + 7) &amp;lt;= lDay) {
+                        daysToAdd += 7;
+                    }
+
+                    day += daysToAdd;
+
+                    if (daysToAdd &amp;gt; 0) {
+                        cl.set(Calendar.SECOND, 0);
+                        cl.set(Calendar.MINUTE, 0);
+                        cl.set(Calendar.HOUR_OF_DAY, 0);
+                        cl.set(Calendar.DAY_OF_MONTH, day);
+                        cl.set(Calendar.MONTH, mon - 1);
+                        // &#39;- 1&#39; here because we are not promoting the month
+                        continue;
+                    }
+
+                } else if (nthdayOfWeek != 0) {
+                    // are we looking for the Nth XXX day in the month?
+                    int dow = daysOfWeek.first(); // desired
+                    // d-o-w
+                    int cDow = cl.get(Calendar.DAY_OF_WEEK); // current d-o-w
+                    int daysToAdd = 0;
+                    if (cDow &amp;lt; dow) {
+                        daysToAdd = dow - cDow;
+                    } else if (cDow &amp;gt; dow) {
+                        daysToAdd = dow + (7 - cDow);
+                    }
+
+                    boolean dayShifted = false;
+                    if (daysToAdd &amp;gt; 0) {
+                        dayShifted = true;
+                    }
+
+                    day += daysToAdd;
+                    int weekOfMonth = day / 7;
+                    if (day % 7 &amp;gt; 0) {
+                        weekOfMonth++;
+                    }
+
+                    daysToAdd = (nthdayOfWeek - weekOfMonth) * 7;
+                    day += daysToAdd;
+                    if (daysToAdd &amp;lt; 0
+                            || day &amp;gt; getLastDayOfMonth(mon, cl
+                                    .get(Calendar.YEAR))) {
+                        cl.set(Calendar.SECOND, 0);
+                        cl.set(Calendar.MINUTE, 0);
+                        cl.set(Calendar.HOUR_OF_DAY, 0);
+                        cl.set(Calendar.DAY_OF_MONTH, 1);
+                        cl.set(Calendar.MONTH, mon);
+                        // no &#39;- 1&#39; here because we are promoting the month
+                        continue;
+                    } else if (daysToAdd &amp;gt; 0 || dayShifted) {
+                        cl.set(Calendar.SECOND, 0);
+                        cl.set(Calendar.MINUTE, 0);
+                        cl.set(Calendar.HOUR_OF_DAY, 0);
+                        cl.set(Calendar.DAY_OF_MONTH, day);
+                        cl.set(Calendar.MONTH, mon - 1);
+                        // &#39;- 1&#39; here because we are NOT promoting the month
+                        continue;
+                    }
+                } else {
+                    int cDow = cl.get(Calendar.DAY_OF_WEEK); // current d-o-w
+                    int dow = daysOfWeek.first(); // desired
+                    // d-o-w
+                    st = daysOfWeek.tailSet(cDow);
+                    if (st != null &amp;amp;&amp;amp; st.size() &amp;gt; 0) {
+                        dow = st.first();
+                    }
+
+                    int daysToAdd = 0;
+                    if (cDow &amp;lt; dow) {
+                        daysToAdd = dow - cDow;
+                    }
+                    if (cDow &amp;gt; dow) {
+                        daysToAdd = dow + (7 - cDow);
+                    }
+
+                    int lDay = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
+
+                    if (day + daysToAdd &amp;gt; lDay) { // will we pass the end of
+                        // the month?
+                        cl.set(Calendar.SECOND, 0);
+                        cl.set(Calendar.MINUTE, 0);
+                        cl.set(Calendar.HOUR_OF_DAY, 0);
+                        cl.set(Calendar.DAY_OF_MONTH, 1);
+                        cl.set(Calendar.MONTH, mon);
+                        // no &#39;- 1&#39; here because we are promoting the month
+                        continue;
+                    } else if (daysToAdd &amp;gt; 0) { // are we swithing days?
+                        cl.set(Calendar.SECOND, 0);
+                        cl.set(Calendar.MINUTE, 0);
+                        cl.set(Calendar.HOUR_OF_DAY, 0);
+                        cl.set(Calendar.DAY_OF_MONTH, day + daysToAdd);
+                        cl.set(Calendar.MONTH, mon - 1);
+                        // &#39;- 1&#39; because calendar is 0-based for this field,
+                        // and we are 1-based
+                        continue;
+                    }
+                }
+            } else { // dayOfWSpec &amp;amp;&amp;amp; !dayOfMSpec
+                throw new UnsupportedOperationException(
+                        &amp;quot;Support for specifying both a day-of-week AND a day-of-month parameter is not implemented.&amp;quot;);
+            }
+            cl.set(Calendar.DAY_OF_MONTH, day);
+
+            mon = cl.get(Calendar.MONTH) + 1;
+            // &#39;+ 1&#39; because calendar is 0-based for this field, and we are
+            // 1-based
+            int year = cl.get(Calendar.YEAR);
+            t = -1;
+
+            // test for expressions that never generate a valid fire date,
+            // but keep looping...
+            if (year &amp;gt; MAX_YEAR) {
+                return null;
+            }
+
+            // get month...................................................
+            st = months.tailSet(mon);
+            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
+                t = mon;
+                mon = st.first();
+            } else {
+                mon = months.first();
+                year++;
+            }
+            if (mon != t) {
+                cl.set(Calendar.SECOND, 0);
+                cl.set(Calendar.MINUTE, 0);
+                cl.set(Calendar.HOUR_OF_DAY, 0);
+                cl.set(Calendar.DAY_OF_MONTH, 1);
+                cl.set(Calendar.MONTH, mon - 1);
+                // &#39;- 1&#39; because calendar is 0-based for this field, and we are
+                // 1-based
+                cl.set(Calendar.YEAR, year);
+                continue;
+            }
+            cl.set(Calendar.MONTH, mon - 1);
+            // &#39;- 1&#39; because calendar is 0-based for this field, and we are
+            // 1-based
+
+            year = cl.get(Calendar.YEAR);
+            t = -1;
+
+            // get year...................................................
+            st = years.tailSet(year);
+            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
+                t = year;
+                year = st.first();
+            } else {
+                return null; // ran out of years...
+            }
+
+            if (year != t) {
+                cl.set(Calendar.SECOND, 0);
+                cl.set(Calendar.MINUTE, 0);
+                cl.set(Calendar.HOUR_OF_DAY, 0);
+                cl.set(Calendar.DAY_OF_MONTH, 1);
+                cl.set(Calendar.MONTH, 0);
+                // &#39;- 1&#39; because calendar is 0-based for this field, and we are
+                // 1-based
+                cl.set(Calendar.YEAR, year);
+                continue;
+            }
+            cl.set(Calendar.YEAR, year);
+
+            gotOne = true;
+        } // while( !done )
+
+        return cl.getTime();
+    }
+
+&lt;/code&gt;&lt;/pre&gt;</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/tech/">tech</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
                 <title>Javac</title>
                 <link>https://sslouis.com/tech/javac/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/javac/</guid>
@@ -658,7 +1269,8 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description></description>
+                    <description>&lt;p&gt;javac&lt;/p&gt;
+</description>
                 
                 
                 
@@ -1403,14 +2015,14 @@ BeanFactory是Spring框架的基础设施,面向Spring本身;ApplicationContext�
 &lt;h4 id=&#34;javaconfig提供了spring基于类注解的配置方式configuration&#34;&gt;JavaConfig提供了Spring基于类注解的配置方式,@Configuration&lt;/h4&gt;
 &lt;h4 id=&#34;annotationconfigapplicationcontext&#34;&gt;AnnotationConfigApplicationContext&lt;/h4&gt;
 &lt;h4 id=&#34;webapplicationcontext&#34;&gt;WebApplicationContext&lt;/h4&gt;
-&lt;p&gt;专门为Web应用准备的,从WebApplicationContext中可以获得ServletCOntext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.&lt;/p&gt;
+&lt;p&gt;专门为Web应用准备的,从WebApplicationContext中可以获得ServletContext的引用,整个WEb应用上下文对象将作为属性放置到ServletContext中,以便Web应用环境可以访问Spring应用上下文.&lt;/p&gt;
 &lt;h5 id=&#34;webapplicationcontextutils&#34;&gt;WebApplicationContextUtils&lt;/h5&gt;
 &lt;h5 id=&#34;为bean添加了三个新的作用域requestsession和global-session&#34;&gt;为Bean添加了三个新的作用域:request,session和global session&lt;/h5&gt;
 &lt;h5 id=&#34;定义了一个常量root_web_application_context_attribute在上下文启动时webapplicationcontextcontext实例即以此为键放置在servletcontext的属性列表中&#34;&gt;定义了一个常量ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE,在上下文启动时,WebApplicationContextContext实例即以此为键放置在ServletContext的属性列表中,&lt;/h5&gt;
 &lt;h5 id=&#34;webapplicationcontext初始化&#34;&gt;WebApplicationContext初始化&lt;/h5&gt;
 &lt;h5 id=&#34;父子容器-hierarchicalbeanfactory&#34;&gt;父子容器 HierarchicalBeanFactory&lt;/h5&gt;
 &lt;h3 id=&#34;bean的生命周期&#34;&gt;Bean的生命周期&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdn.net/20170227103939323?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHJvZ3JhbW1lcnl1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&#34; alt=&#34;avatar&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;&#34; alt=&#34;avatar&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;beanpostprocessoraop动态代理的关键&#34;&gt;BeanPostProcessor(AOP,动态代理的关键)&lt;/h4&gt;
 &lt;h4 id=&#34;heading&#34;&gt;&lt;/h4&gt;
 &lt;p&gt;Bean的作用范围scope=&amp;quot;prototype&amp;quot;时,将Bean返回给调用者,调用者负责Bean后续生命的管理,
@@ -1866,563 +2478,6 @@ AVL树查找的时间复杂度为O(logN),因为树一定是平衡的,但是,由�
                                     <category domain="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/">算法</category>
                                 
                             
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/cron%E7%9A%84%E8%AE%A1%E7%AE%97%E5%AE%9E%E7%8E%B0/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/cron%E7%9A%84%E8%AE%A1%E7%AE%97%E5%AE%9E%E7%8E%B0/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;pre&gt;&lt;code&gt;public Date getTimeAfter(Date afterTime) {
-
-        // Computation is based on Gregorian year only.
-        // 获取当前时区的日历对象
-        Calendar cl = new java.util.GregorianCalendar(getTimeZone()); 
-
-        // move ahead one second, since we&#39;re computing the time *after* the
-        // given time
-        // 向前进1秒
-        afterTime = new Date(afterTime.getTime() + 1000);
-        // CronTrigger does not deal with milliseconds
-        cl.setTime(afterTime);
-        cl.set(Calendar.MILLISECOND, 0);
-
-        boolean gotOne = false;
-        // loop until we&#39;ve computed the next time, or we&#39;ve past the endTime
-        while (!gotOne) {
-
-            //if (endTime != null &amp;amp;&amp;amp; cl.getTime().after(endTime)) return null;
-            if(cl.get(Calendar.YEAR) &amp;gt; 2999) { // prevent endless loop...
-                return null;
-            }
-
-            SortedSet&amp;lt;Integer&amp;gt; st = null;
-            int t = 0;
-
-            int sec = cl.get(Calendar.SECOND);
-            int min = cl.get(Calendar.MINUTE);
-
-            // get second.................................................
-            st = seconds.tailSet(sec);
-            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
-                sec = st.first();
-            } else {
-                sec = seconds.first();
-                min++;
-                cl.set(Calendar.MINUTE, min);
-            }
-            cl.set(Calendar.SECOND, sec);
-
-            min = cl.get(Calendar.MINUTE);
-            int hr = cl.get(Calendar.HOUR_OF_DAY);
-            t = -1;
-
-            // get minute.................................................
-            st = minutes.tailSet(min);
-            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
-                t = min;
-                min = st.first();
-            } else {
-                min = minutes.first();
-                hr++;
-            }
-            if (min != t) {
-                cl.set(Calendar.SECOND, 0);
-                cl.set(Calendar.MINUTE, min);
-                setCalendarHour(cl, hr);
-                continue;
-            }
-            cl.set(Calendar.MINUTE, min);
-
-            hr = cl.get(Calendar.HOUR_OF_DAY);
-            int day = cl.get(Calendar.DAY_OF_MONTH);
-            t = -1;
-
-            // get hour...................................................
-            st = hours.tailSet(hr);
-            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
-                t = hr;
-                hr = st.first();
-            } else {
-                hr = hours.first();
-                day++;
-            }
-            if (hr != t) {
-                cl.set(Calendar.SECOND, 0);
-                cl.set(Calendar.MINUTE, 0);
-                cl.set(Calendar.DAY_OF_MONTH, day);
-                setCalendarHour(cl, hr);
-                continue;
-            }
-            cl.set(Calendar.HOUR_OF_DAY, hr);
-
-            day = cl.get(Calendar.DAY_OF_MONTH);
-            int mon = cl.get(Calendar.MONTH) + 1;
-            // &#39;+ 1&#39; because calendar is 0-based for this field, and we are
-            // 1-based
-            t = -1;
-            int tmon = mon;
-            
-            // get day...................................................
-            boolean dayOfMSpec = !daysOfMonth.contains(NO_SPEC);
-            boolean dayOfWSpec = !daysOfWeek.contains(NO_SPEC);
-            if (dayOfMSpec &amp;amp;&amp;amp; !dayOfWSpec) { // get day by day of month rule
-                st = daysOfMonth.tailSet(day);
-                if (lastdayOfMonth) {
-                    if(!nearestWeekday) {
-                        t = day;
-                        day = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
-                        day -= lastdayOffset;
-                        if(t &amp;gt; day) {
-                            mon++;
-                            if(mon &amp;gt; 12) { 
-                                mon = 1;
-                                tmon = 3333; // ensure test of mon != tmon further below fails
-                                cl.add(Calendar.YEAR, 1);
-                            }
-                            day = 1;
-                        }
-                    } else {
-                        t = day;
-                        day = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
-                        day -= lastdayOffset;
-                        
-                        java.util.Calendar tcal = java.util.Calendar.getInstance(getTimeZone());
-                        tcal.set(Calendar.SECOND, 0);
-                        tcal.set(Calendar.MINUTE, 0);
-                        tcal.set(Calendar.HOUR_OF_DAY, 0);
-                        tcal.set(Calendar.DAY_OF_MONTH, day);
-                        tcal.set(Calendar.MONTH, mon - 1);
-                        tcal.set(Calendar.YEAR, cl.get(Calendar.YEAR));
-                        
-                        int ldom = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
-                        int dow = tcal.get(Calendar.DAY_OF_WEEK);
-
-                        if(dow == Calendar.SATURDAY &amp;amp;&amp;amp; day == 1) {
-                            day += 2;
-                        } else if(dow == Calendar.SATURDAY) {
-                            day -= 1;
-                        } else if(dow == Calendar.SUNDAY &amp;amp;&amp;amp; day == ldom) { 
-                            day -= 2;
-                        } else if(dow == Calendar.SUNDAY) { 
-                            day += 1;
-                        }
-                    
-                        tcal.set(Calendar.SECOND, sec);
-                        tcal.set(Calendar.MINUTE, min);
-                        tcal.set(Calendar.HOUR_OF_DAY, hr);
-                        tcal.set(Calendar.DAY_OF_MONTH, day);
-                        tcal.set(Calendar.MONTH, mon - 1);
-                        Date nTime = tcal.getTime();
-                        if(nTime.before(afterTime)) {
-                            day = 1;
-                            mon++;
-                        }
-                    }
-                } else if(nearestWeekday) {
-                    t = day;
-                    day = daysOfMonth.first();
-
-                    java.util.Calendar tcal = java.util.Calendar.getInstance(getTimeZone());
-                    tcal.set(Calendar.SECOND, 0);
-                    tcal.set(Calendar.MINUTE, 0);
-                    tcal.set(Calendar.HOUR_OF_DAY, 0);
-                    tcal.set(Calendar.DAY_OF_MONTH, day);
-                    tcal.set(Calendar.MONTH, mon - 1);
-                    tcal.set(Calendar.YEAR, cl.get(Calendar.YEAR));
-                    
-                    int ldom = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
-                    int dow = tcal.get(Calendar.DAY_OF_WEEK);
-
-                    if(dow == Calendar.SATURDAY &amp;amp;&amp;amp; day == 1) {
-                        day += 2;
-                    } else if(dow == Calendar.SATURDAY) {
-                        day -= 1;
-                    } else if(dow == Calendar.SUNDAY &amp;amp;&amp;amp; day == ldom) { 
-                        day -= 2;
-                    } else if(dow == Calendar.SUNDAY) { 
-                        day += 1;
-                    }
-                        
-                
-                    tcal.set(Calendar.SECOND, sec);
-                    tcal.set(Calendar.MINUTE, min);
-                    tcal.set(Calendar.HOUR_OF_DAY, hr);
-                    tcal.set(Calendar.DAY_OF_MONTH, day);
-                    tcal.set(Calendar.MONTH, mon - 1);
-                    Date nTime = tcal.getTime();
-                    if(nTime.before(afterTime)) {
-                        day = daysOfMonth.first();
-                        mon++;
-                    }
-                } else if (st != null &amp;amp;&amp;amp; st.size() != 0) {
-                    t = day;
-                    day = st.first();
-                    // make sure we don&#39;t over-run a short month, such as february
-                    int lastDay = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
-                    if (day &amp;gt; lastDay) {
-                        day = daysOfMonth.first();
-                        mon++;
-                    }
-                } else {
-                    day = daysOfMonth.first();
-                    mon++;
-                }
-                
-                if (day != t || mon != tmon) {
-                    cl.set(Calendar.SECOND, 0);
-                    cl.set(Calendar.MINUTE, 0);
-                    cl.set(Calendar.HOUR_OF_DAY, 0);
-                    cl.set(Calendar.DAY_OF_MONTH, day);
-                    cl.set(Calendar.MONTH, mon - 1);
-                    // &#39;- 1&#39; because calendar is 0-based for this field, and we
-                    // are 1-based
-                    continue;
-                }
-            } else if (dayOfWSpec &amp;amp;&amp;amp; !dayOfMSpec) { // get day by day of week rule
-                if (lastdayOfWeek) { // are we looking for the last XXX day of
-                    // the month?
-                    int dow = daysOfWeek.first(); // desired
-                    // d-o-w
-                    int cDow = cl.get(Calendar.DAY_OF_WEEK); // current d-o-w
-                    int daysToAdd = 0;
-                    if (cDow &amp;lt; dow) {
-                        daysToAdd = dow - cDow;
-                    }
-                    if (cDow &amp;gt; dow) {
-                        daysToAdd = dow + (7 - cDow);
-                    }
-
-                    int lDay = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
-
-                    if (day + daysToAdd &amp;gt; lDay) { // did we already miss the
-                        // last one?
-                        cl.set(Calendar.SECOND, 0);
-                        cl.set(Calendar.MINUTE, 0);
-                        cl.set(Calendar.HOUR_OF_DAY, 0);
-                        cl.set(Calendar.DAY_OF_MONTH, 1);
-                        cl.set(Calendar.MONTH, mon);
-                        // no &#39;- 1&#39; here because we are promoting the month
-                        continue;
-                    }
-
-                    // find date of last occurrence of this day in this month...
-                    while ((day + daysToAdd + 7) &amp;lt;= lDay) {
-                        daysToAdd += 7;
-                    }
-
-                    day += daysToAdd;
-
-                    if (daysToAdd &amp;gt; 0) {
-                        cl.set(Calendar.SECOND, 0);
-                        cl.set(Calendar.MINUTE, 0);
-                        cl.set(Calendar.HOUR_OF_DAY, 0);
-                        cl.set(Calendar.DAY_OF_MONTH, day);
-                        cl.set(Calendar.MONTH, mon - 1);
-                        // &#39;- 1&#39; here because we are not promoting the month
-                        continue;
-                    }
-
-                } else if (nthdayOfWeek != 0) {
-                    // are we looking for the Nth XXX day in the month?
-                    int dow = daysOfWeek.first(); // desired
-                    // d-o-w
-                    int cDow = cl.get(Calendar.DAY_OF_WEEK); // current d-o-w
-                    int daysToAdd = 0;
-                    if (cDow &amp;lt; dow) {
-                        daysToAdd = dow - cDow;
-                    } else if (cDow &amp;gt; dow) {
-                        daysToAdd = dow + (7 - cDow);
-                    }
-
-                    boolean dayShifted = false;
-                    if (daysToAdd &amp;gt; 0) {
-                        dayShifted = true;
-                    }
-
-                    day += daysToAdd;
-                    int weekOfMonth = day / 7;
-                    if (day % 7 &amp;gt; 0) {
-                        weekOfMonth++;
-                    }
-
-                    daysToAdd = (nthdayOfWeek - weekOfMonth) * 7;
-                    day += daysToAdd;
-                    if (daysToAdd &amp;lt; 0
-                            || day &amp;gt; getLastDayOfMonth(mon, cl
-                                    .get(Calendar.YEAR))) {
-                        cl.set(Calendar.SECOND, 0);
-                        cl.set(Calendar.MINUTE, 0);
-                        cl.set(Calendar.HOUR_OF_DAY, 0);
-                        cl.set(Calendar.DAY_OF_MONTH, 1);
-                        cl.set(Calendar.MONTH, mon);
-                        // no &#39;- 1&#39; here because we are promoting the month
-                        continue;
-                    } else if (daysToAdd &amp;gt; 0 || dayShifted) {
-                        cl.set(Calendar.SECOND, 0);
-                        cl.set(Calendar.MINUTE, 0);
-                        cl.set(Calendar.HOUR_OF_DAY, 0);
-                        cl.set(Calendar.DAY_OF_MONTH, day);
-                        cl.set(Calendar.MONTH, mon - 1);
-                        // &#39;- 1&#39; here because we are NOT promoting the month
-                        continue;
-                    }
-                } else {
-                    int cDow = cl.get(Calendar.DAY_OF_WEEK); // current d-o-w
-                    int dow = daysOfWeek.first(); // desired
-                    // d-o-w
-                    st = daysOfWeek.tailSet(cDow);
-                    if (st != null &amp;amp;&amp;amp; st.size() &amp;gt; 0) {
-                        dow = st.first();
-                    }
-
-                    int daysToAdd = 0;
-                    if (cDow &amp;lt; dow) {
-                        daysToAdd = dow - cDow;
-                    }
-                    if (cDow &amp;gt; dow) {
-                        daysToAdd = dow + (7 - cDow);
-                    }
-
-                    int lDay = getLastDayOfMonth(mon, cl.get(Calendar.YEAR));
-
-                    if (day + daysToAdd &amp;gt; lDay) { // will we pass the end of
-                        // the month?
-                        cl.set(Calendar.SECOND, 0);
-                        cl.set(Calendar.MINUTE, 0);
-                        cl.set(Calendar.HOUR_OF_DAY, 0);
-                        cl.set(Calendar.DAY_OF_MONTH, 1);
-                        cl.set(Calendar.MONTH, mon);
-                        // no &#39;- 1&#39; here because we are promoting the month
-                        continue;
-                    } else if (daysToAdd &amp;gt; 0) { // are we swithing days?
-                        cl.set(Calendar.SECOND, 0);
-                        cl.set(Calendar.MINUTE, 0);
-                        cl.set(Calendar.HOUR_OF_DAY, 0);
-                        cl.set(Calendar.DAY_OF_MONTH, day + daysToAdd);
-                        cl.set(Calendar.MONTH, mon - 1);
-                        // &#39;- 1&#39; because calendar is 0-based for this field,
-                        // and we are 1-based
-                        continue;
-                    }
-                }
-            } else { // dayOfWSpec &amp;amp;&amp;amp; !dayOfMSpec
-                throw new UnsupportedOperationException(
-                        &amp;quot;Support for specifying both a day-of-week AND a day-of-month parameter is not implemented.&amp;quot;);
-            }
-            cl.set(Calendar.DAY_OF_MONTH, day);
-
-            mon = cl.get(Calendar.MONTH) + 1;
-            // &#39;+ 1&#39; because calendar is 0-based for this field, and we are
-            // 1-based
-            int year = cl.get(Calendar.YEAR);
-            t = -1;
-
-            // test for expressions that never generate a valid fire date,
-            // but keep looping...
-            if (year &amp;gt; MAX_YEAR) {
-                return null;
-            }
-
-            // get month...................................................
-            st = months.tailSet(mon);
-            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
-                t = mon;
-                mon = st.first();
-            } else {
-                mon = months.first();
-                year++;
-            }
-            if (mon != t) {
-                cl.set(Calendar.SECOND, 0);
-                cl.set(Calendar.MINUTE, 0);
-                cl.set(Calendar.HOUR_OF_DAY, 0);
-                cl.set(Calendar.DAY_OF_MONTH, 1);
-                cl.set(Calendar.MONTH, mon - 1);
-                // &#39;- 1&#39; because calendar is 0-based for this field, and we are
-                // 1-based
-                cl.set(Calendar.YEAR, year);
-                continue;
-            }
-            cl.set(Calendar.MONTH, mon - 1);
-            // &#39;- 1&#39; because calendar is 0-based for this field, and we are
-            // 1-based
-
-            year = cl.get(Calendar.YEAR);
-            t = -1;
-
-            // get year...................................................
-            st = years.tailSet(year);
-            if (st != null &amp;amp;&amp;amp; st.size() != 0) {
-                t = year;
-                year = st.first();
-            } else {
-                return null; // ran out of years...
-            }
-
-            if (year != t) {
-                cl.set(Calendar.SECOND, 0);
-                cl.set(Calendar.MINUTE, 0);
-                cl.set(Calendar.HOUR_OF_DAY, 0);
-                cl.set(Calendar.DAY_OF_MONTH, 1);
-                cl.set(Calendar.MONTH, 0);
-                // &#39;- 1&#39; because calendar is 0-based for this field, and we are
-                // 1-based
-                cl.set(Calendar.YEAR, year);
-                continue;
-            }
-            cl.set(Calendar.YEAR, year);
-
-            gotOne = true;
-        } // while( !done )
-
-        return cl.getTime();
-    }
-
-&lt;/code&gt;&lt;/pre&gt;</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/java%E6%A8%A1%E5%9D%97%E5%8C%96%E7%B3%BB%E7%BB%9F/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/java%E6%A8%A1%E5%9D%97%E5%8C%96%E7%B3%BB%E7%BB%9F/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description></description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/mysql/mysql1.0/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/mysql/mysql1.0/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;p&gt;####MySQL逻辑架构&lt;/p&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/mysql/">MySQL</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title></title>
-                <link>https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
-                <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;SSL:Secure Sockets Layer安全套接层
-TLS：Transport Layer Sercurity传输层安全&lt;/p&gt;
-&lt;h3 id=&#34;ssl&#34;&gt;SSL&lt;/h3&gt;
-&lt;h3 id=&#34;基本运行过程&#34;&gt;基本运行过程&lt;/h3&gt;
-&lt;p&gt;SSL/TLS协议的基本思路是采用公钥加密法。&lt;/p&gt;
-</description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                
-                
-                
-                    
                         
                     
                 
