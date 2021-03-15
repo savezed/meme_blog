@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Javac | sslouis</title>
+    <title>Javac编译器是什么？ | sslouis</title>
 
     <link rel="stylesheet" href="/css/meme.min.css" />
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="sslouis" /><meta name="description" content="javac" />
+    <meta name="author" content="sslouis" /><meta name="description" content="Javac编译器是由Java编写的程序。 编译过程大致可以分为1个准备过程和3个处理过……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -56,11 +56,11 @@
         "datePublished": "2020-09-03T13:12:27+08:00",
         "dateModified": "2020-12-22T13:27:22+08:00",
         "url": "https://sslouis.com/tech/javac/",
-        "headline": "Javac",
-        "description": "javac",
+        "headline": "Javac编译器是什么？",
+        "description": "Javac编译器是由Java编写的程序。 编译过程大致可以分为1个准备过程和3个处理过……",
         "inLanguage" : "zh-CN",
         "articleSection": "tech",
-        "wordCount":  1 ,
+        "wordCount":  257 ,
         "image": "https://sslouis.com/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -96,8 +96,8 @@
 
 
 
-<meta property="og:title" content="Javac" />
-<meta property="og:description" content="javac" />
+<meta property="og:title" content="Javac编译器是什么？" />
+<meta property="og:description" content="Javac编译器是由Java编写的程序。 编译过程大致可以分为1个准备过程和3个处理过……" />
 <meta property="og:url" content="https://sslouis.com/tech/javac/" />
 <meta property="og:site_name" content="sslouis" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://sslouis.com/icons/apple-touch-icon.png" />
@@ -214,7 +214,7 @@
 
         <article class="content post h-entry" data-align="justify" data-type="tech" data-toc-num="true">
 
-            <h1 class="post-title p-name">Javac</h1>
+            <h1 class="post-title p-name">Javac编译器是什么？</h1>
 
             
 
@@ -225,7 +225,20 @@
             
 
             <div class="post-body e-content">
-              <p style="text-indent:0"><span class="drop-cap">j</span>avac</p>
+              <p style="text-indent:0"><span class="drop-cap">J</span>avac编译器是由Java编写的程序。<br>
+编译过程大致可以分为1个准备过程和3个处理过程：<br>
+1）准备过程：初始化插入式注解处理器。
+2）解析与填充符号表过程，包括：</p>
+<ul>
+<li>词法、语法分析。将源代码的字符流转变为标记集合，构造出抽象语法树。</li>
+<li>填充符号表。产生符号地址和符号信息。
+3）插入式注解处理器的注解处理过程。
+4）分析与字节码生成过程，包括：</li>
+<li>标注检查。对语法的静态信息进行检查。</li>
+<li>数据流及控制流分析。对程序动态运行过程进行检查。</li>
+<li>解语法糖。将简化代码编写的语法糖还原为原有的形式。</li>
+<li>字节码生成。将前面各个步骤所生成的信息转化成字节码。</li>
+</ul>
 
             </div>
 

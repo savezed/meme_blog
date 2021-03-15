@@ -23,13 +23,13 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 02 Mar 2021 18:09:10 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 15 Mar 2021 16:39:36 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://sslouis.com/rss.xml" />
         
         
             <item>
-                <title>B</title>
+                <title>Spring Boot是怎么启动的？</title>
                 <link>https://sslouis.com/tech/spring-boot%E6%98%AF%E6%80%8E%E4%B9%88%E5%90%AF%E5%8A%A8%E7%9A%84/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/spring-boot%E6%98%AF%E6%80%8E%E4%B9%88%E5%90%AF%E5%8A%A8%E7%9A%84/</guid>
                 <pubDate>Wed, 24 Feb 2021 19:01:50 &#43;0800</pubDate>
@@ -117,7 +117,7 @@
             </item>
         
             <item>
-                <title>SS是什么</title>
+                <title>SSL是什么</title>
                 <link>https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/ssl%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
                 <pubDate>Wed, 13 Jan 2021 15:13:00 &#43;0800</pubDate>
@@ -496,90 +496,6 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                                     <category domain="https://sslouis.com/tags/java-collections/">Java Collections</category>
                                 
                             
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>Spring AOP笔记</title>
-                <link>https://sslouis.com/tech/spring/spring-aop/</link>
-                <guid isPermaLink="true">https://sslouis.com/tech/spring/spring-aop/</guid>
-                <pubDate>Fri, 18 Dec 2020 20:33:32 &#43;0800</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description></description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/">tech</category>
-                            
-                        
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/tech/spring/">Spring</category>
-                            
-                        
-                    
-                
-                
-                
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://sslouis.com/tags/spring-aop/">Spring AOP</category>
-                                
-                            
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>Hello World</title>
-                <link>https://sslouis.com/life/hello-world/</link>
-                <guid isPermaLink="true">https://sslouis.com/life/hello-world/</guid>
-                <pubDate>Tue, 15 Dec 2020 18:47:47 &#43;0800</pubDate>
-                
-                    <author>sslouis22@gmail.com (sslouis)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description></description>
-                
-                
-                
-                    
-                    
-                    
-                        
-                        
-                        
-                            
-                                <category domain="https://sslouis.com/life/">life</category>
-                            
-                        
-                    
-                
-                
-                
-                    
                         
                     
                 
@@ -1260,7 +1176,7 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
             </item>
         
             <item>
-                <title>Javac</title>
+                <title>Javac编译器是什么？</title>
                 <link>https://sslouis.com/tech/javac/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/javac/</guid>
                 <pubDate>Thu, 03 Sep 2020 13:12:27 &#43;0800</pubDate>
@@ -1269,7 +1185,20 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;p&gt;javac&lt;/p&gt;
+                    <description>&lt;p&gt;Javac编译器是由Java编写的程序。&lt;br&gt;
+编译过程大致可以分为1个准备过程和3个处理过程：&lt;br&gt;
+1）准备过程：初始化插入式注解处理器。
+2）解析与填充符号表过程，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;词法、语法分析。将源代码的字符流转变为标记集合，构造出抽象语法树。&lt;/li&gt;
+&lt;li&gt;填充符号表。产生符号地址和符号信息。
+3）插入式注解处理器的注解处理过程。
+4）分析与字节码生成过程，包括：&lt;/li&gt;
+&lt;li&gt;标注检查。对语法的静态信息进行检查。&lt;/li&gt;
+&lt;li&gt;数据流及控制流分析。对程序动态运行过程进行检查。&lt;/li&gt;
+&lt;li&gt;解语法糖。将简化代码编写的语法糖还原为原有的形式。&lt;/li&gt;
+&lt;li&gt;字节码生成。将前面各个步骤所生成的信息转化成字节码。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 
                 
@@ -2132,7 +2061,7 @@ AspectJWeavingEnabler,CustomAutowireConfigurer,ConfigurationCLassPostProcessor&l
             </item>
         
             <item>
-                <title>Spring AOP</title>
+                <title>Spring AOP笔记</title>
                 <link>https://sslouis.com/tech/spring/aop/</link>
                 <guid isPermaLink="true">https://sslouis.com/tech/spring/aop/</guid>
                 <pubDate>Sat, 03 Aug 2019 22:00:21 &#43;0800</pubDate>
@@ -2393,6 +2322,42 @@ const BrowserWindow = electron.BrowserWindow;
                                     <category domain="https://sslouis.com/tags/css/">css</category>
                                 
                             
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Hello World</title>
+                <link>https://sslouis.com/life/hello-world/</link>
+                <guid isPermaLink="true">https://sslouis.com/life/hello-world/</guid>
+                <pubDate>Sat, 15 Dec 2018 18:47:47 &#43;0800</pubDate>
+                
+                    <author>sslouis22@gmail.com (sslouis)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;这里用来测试各种奇奇怪怪的东西。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sslouis.com/mstile-150x150.png&#34; alt=&#34;Hugo使用图片资源&#34;&gt;&lt;/p&gt;
+</description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://sslouis.com/life/">life</category>
+                            
+                        
+                    
+                
+                
+                
+                    
                         
                     
                 
