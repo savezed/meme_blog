@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>web | sslouis</title>
+    <title> | sslouis</title>
 
     <link rel="stylesheet" href="/css/meme.min.css" />
 
@@ -27,7 +27,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Cinzel&#43;Decorative:wght@700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="sslouis" /><meta name="description" content="这是 reuixiy 的生活与技术博客！怎么记住 reuixiy 呢？其实就是「一休儿」的拼音，只不过顺序是从右往左……" />
+    <meta name="author" content="sslouis" /><meta name="description" content="消费模式  集群消费模式
+一个消费者组中的消费者实例，是负载均衡（策略可以配置）地消费Topic中的消息；目前大部分场景都是适合集群消费模式，RocketMQ的消费模式默认是集群消费。 广播消费模式 消费者组中的全部消费者实例将消费整个Topic的全部信息。广播消费比较适合各个消费者实例都需要通知的场景，比如刷新应用服务器中的缓存。  可靠消息的保证  重试-死信机制 Rebalance机制
+用于在发生Broker掉线、Topic扩容和缩容、消费者扩容和缩容等变化时，自动感知并调整自身消费，以尽量减少甚至避免消息没有被消费。  消费者启动机制 DefaultMQPullConsumer DefaultMQPushConsumer 消费者的Rebalance机制 待补充
+消费进度保存机制 消费方式 消息过滤 RocketMQ支持Tag过滤、SQL92过滤、Filter Server过滤。
+Broker
+为什么写文件很快  零拷贝和Java文件映射
+java.nio.MappedByteBuffer.java文件中实现了零拷贝技术，即Java进程映射到内核态内存，原来内核态内存与用户态内存的互相拷贝过程就消失了。  " />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -37,28 +43,39 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="sslouis" />
-    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-starturl" content="../../../" />
     <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <meta name="msapplication-TileImage" content="../../../icons/mstile-150x150.png" />
     <link rel="manifest" href="/manifest.json" />
 
     
     
 
     
-    <link rel="canonical" href="https://sslouis.com/tech/web/" />
+    <link rel="canonical" href="https://sslouis.com/tech/draft/rocketmq/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
+        "@type": "BlogPosting",
         "datePublished": "2017-05-27T15:13:14+08:00",
-        "dateModified": "2020-12-22T19:08:56+08:00",
-        "url": "https://sslouis.com/tech/web/",
-        "name": "web",
-        "description": "这是 reuixiy 的生活与技术博客！怎么记住 reuixiy 呢？其实就是「一休儿」的拼音，只不过顺序是从右往左……",
+        "dateModified": "2017-05-27T15:13:14+08:00",
+        "url": "https://sslouis.com/tech/draft/rocketmq/",
+        "headline": "",
+        "description": "消费模式  集群消费模式\n一个消费者组中的消费者实例，是负载均衡（策略可以配置）地消费Topic中的消息；目前大部分场景都是适合集群消费模式，RocketMQ的消费模式默认是集群消费。 广播消费模式 消费者组中的全部消费者实例将消费整个Topic的全部信息。广播消费比较适合各个消费者实例都需要通知的场景，比如刷新应用服务器中的缓存。  可靠消息的保证  重试-死信机制 Rebalance机制\n用于在发生Broker掉线、Topic扩容和缩容、消费者扩容和缩容等变化时，自动感知并调整自身消费，以尽量减少甚至避免消息没有被消费。  消费者启动机制 DefaultMQPullConsumer DefaultMQPushConsumer 消费者的Rebalance机制 待补充\n消费进度保存机制 消费方式 消息过滤 RocketMQ支持Tag过滤、SQL92过滤、Filter Server过滤。\nBroker\n为什么写文件很快  零拷贝和Java文件映射\njava.nio.MappedByteBuffer.java文件中实现了零拷贝技术，即Java进程映射到内核态内存，原来内核态内存与用户态内存的互相拷贝过程就消失了。  ",
+        "inLanguage" : "zh-CN",
+        "articleSection": "tech",
+        "wordCount":  23 ,
         "image": "https://sslouis.com/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Viva La Vida",
+            "email": "sslouis22@gmail.com",
+            "image": "https://sslouis.com/icons/apple-touch-icon.png",
+            "url": "https://www.sslouis.com/",
+            "name": "sslouis"
+        },
         "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
         "publisher": {
             "@type": "Organization",
@@ -85,12 +102,23 @@
 
 
 
-<meta property="og:title" content="web" />
-<meta property="og:description" content="这是 reuixiy 的生活与技术博客！怎么记住 reuixiy 呢？其实就是「一休儿」的拼音，只不过顺序是从右往左……" />
-<meta property="og:url" content="https://sslouis.com/tech/web/" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="消费模式  集群消费模式
+一个消费者组中的消费者实例，是负载均衡（策略可以配置）地消费Topic中的消息；目前大部分场景都是适合集群消费模式，RocketMQ的消费模式默认是集群消费。 广播消费模式 消费者组中的全部消费者实例将消费整个Topic的全部信息。广播消费比较适合各个消费者实例都需要通知的场景，比如刷新应用服务器中的缓存。  可靠消息的保证  重试-死信机制 Rebalance机制
+用于在发生Broker掉线、Topic扩容和缩容、消费者扩容和缩容等变化时，自动感知并调整自身消费，以尽量减少甚至避免消息没有被消费。  消费者启动机制 DefaultMQPullConsumer DefaultMQPushConsumer 消费者的Rebalance机制 待补充
+消费进度保存机制 消费方式 消息过滤 RocketMQ支持Tag过滤、SQL92过滤、Filter Server过滤。
+Broker
+为什么写文件很快  零拷贝和Java文件映射
+java.nio.MappedByteBuffer.java文件中实现了零拷贝技术，即Java进程映射到内核态内存，原来内核态内存与用户态内存的互相拷贝过程就消失了。  " />
+<meta property="og:url" content="https://sslouis.com/tech/draft/rocketmq/" />
 <meta property="og:site_name" content="sslouis" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://sslouis.com/icons/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-05-27T15:13:14&#43;08:00" />
+    <meta property="article:modified_time" content="2017-05-27T15:13:14&#43;08:00" />
+    
+    <meta property="article:section" content="tech" />
+
 
         <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
 
@@ -119,7 +147,7 @@
     <header class="header">
         
             <div class="header-wrapper">
-                <div class="header-inner list">
+                <div class="header-inner single">
                     
     <div class="site-brand">
         
@@ -191,143 +219,102 @@
 
             
             
-    
-        <main class="main list" id="main">
-            <div class="main-inner">
-                <div class="content list-group">
-                    
-                        
-                            <h1 class="list-title">web</h1>
-                        
-                        
-                    
+    <main class="main single" id="main">
+    <div class="main-inner">
 
-                    
-
-                    
-                    
-                        
-                        
-                            
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                        
-                    
-
-                    
-
-                    
-                    
-
-                    
-                    
-                    
-                        
-                        
-                            
-                            
-                        
-                        
-                        
-                        
-                            
-                        
-                        
-                        <h2 class="list-year">2019<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon chinese-zodiac"><path d="M558 775q-7 17-4 28 3 12 15 13 9 2 19-8 10-11 14-28 4-18-6-36-9 0-25 12-9 10-13 19zm358-229q-4-7-8-10-2-2-6-5-2-2-6 0t-6 2q-2 1-4 4-1 2-4 7-1 1-1 3t2 6q2 3 9-1 10-4 10 7-1 14-13 16h-3q-3-20-38-48-53-44-153-46H562q-1 2-3 4t-3 11-4 16q-3 6 2 17t8 15q19 21 35 55 16 33 15 66v71q0 11 1 32 1 20 4 29 4 10 7 12l2 2 10 5q4 1 11-1t15-8q7-7 15-25t16-43q18 1 55 3v7q0 4 1 17 1 12 5 19t10 15q6 9 17 5 15-2 18-14t0-25q-3-14 1-28 5-13 9 11 1 10 3 31 1 9 2 11 1 6 8 9t18-1q10-4 13-14 4-8 4-27 0-18 5-43 5-24 22-50 8-10 9-39 1-28-4-35l18-9q14-8 13-21 0-7-4-15zM593 688q6-30 3-55-3-24-13-44-11-19-19-31-8-13-17-19-3-2-7-7-3-36-11-63-7-28-17-43-10-16-17-24-8-8-15-11l-6-3q8-53-18-58h-3q-3 0-7 1-5 2-10 5-5 4-9 9t-9 10-7 8-7 9q-35 0-141-2-3-11-8-18t-10-6q-2-1-4-1-7-1-12 1t-8 8-4 11-1 13q0 9 1 12t1 10q0 1 1 3h1v9q0 6 3 11-10 13-16 32-6 20-9 38-3 19-4 38-1 20-6 32-4 12-9 18-2 3-19 20-10 9-29 27-11 12-19 29-8 16-8 28v3q8 51 57 80 49 45 142 60 32 5 60 5 52 0 90-17 121-36 140-128zm-163 9q-2 0-3-1t-2-1-3-2-3-1q-5-10-2-30 3-19 15-14 13 4 19 9 5 5 3 11t-5 12q-4 5-11 10t-8 7zm-7-243q10 0 16 25-5 25-19 25-7-1-12-13v-1q-1-2-2-8-2-6 0-12 1-7 5-11t12-5zm-116-3q9 3 9 30-17 50-32 7-1-17 7-29 8-11 16-8zm-51 260q-5-10-8-23-3-14 2-24t19-9q15 1 20 10t1 18l-3 9h1q-15 21-32 19z"/></svg></h2>
-                        
-                            <ul class="list-part">
         
-            <li class="list-item">
-                <a href="/tech/web/electron%E7%9A%84%E5%9D%91/" class="list-item-title">Electron的坑</a>
-                <time datetime="2019-06-06T00:00:00&#43;08:00" class="list-item-time">2019-06-06</time>
-            </li>
-        
-            <li class="list-item">
-                <a href="/tech/web/%E5%AE%9E%E7%8E%B0%E9%BC%A0%E6%A0%87%E6%BB%91%E5%8A%A8div%E7%9A%84%E5%87%BA%E7%8E%B0%E5%92%8C%E9%9A%90%E8%97%8F/" class="list-item-title">实现鼠标滑动div的出现和隐藏</a>
-                <time datetime="2019-01-17T19:37:22&#43;08:00" class="list-item-time">2019-01-17</time>
-            </li>
-        
-        
-    </ul>
 
+        <article class="content post h-entry" data-align="justify" data-type="tech" data-toc-num="true">
 
-                        
-                    
-                </div>
+            <h1 class="post-title p-name"></h1>
+
+            
+
+            
+                
+            
+
+            
+
+            <div class="post-body e-content">
+              <h3 id="消费模式"><a href="#消费模式" class="anchor-link">#</a>消费模式</h3>
+<ul>
+<li>集群消费模式<br>
+一个消费者组中的消费者实例，是负载均衡（策略可以配置）地消费Topic中的消息；目前大部分场景都是适合集群消费模式，RocketMQ的消费模式默认是集群消费。</li>
+<li>广播消费模式
+消费者组中的全部消费者实例将消费整个Topic的全部信息。广播消费比较适合各个消费者实例都需要通知的场景，比如刷新应用服务器中的缓存。</li>
+</ul>
+<h3 id="可靠消息的保证"><a href="#可靠消息的保证" class="anchor-link">#</a>可靠消息的保证</h3>
+<ul>
+<li>重试-死信机制</li>
+<li>Rebalance机制<br>
+用于在发生Broker掉线、Topic扩容和缩容、消费者扩容和缩容等变化时，自动感知并调整自身消费，以尽量减少甚至避免消息没有被消费。</li>
+</ul>
+<h2 id="消费者启动机制"><a href="#消费者启动机制" class="anchor-link">#</a>消费者启动机制</h2>
+<h3 id="defaultmqpullconsumer"><a href="#defaultmqpullconsumer" class="anchor-link">#</a>DefaultMQPullConsumer</h3>
+<h3 id="defaultmqpushconsumer"><a href="#defaultmqpushconsumer" class="anchor-link">#</a>DefaultMQPushConsumer</h3>
+<h2 id="消费者的rebalance机制"><a href="#消费者的rebalance机制" class="anchor-link">#</a>消费者的Rebalance机制</h2>
+<p style="text-indent:0"><span class="drop-cap">待</span>补充</p>
+<h2 id="消费进度保存机制"><a href="#消费进度保存机制" class="anchor-link">#</a>消费进度保存机制</h2>
+<h2 id="消费方式"><a href="#消费方式" class="anchor-link">#</a>消费方式</h2>
+<h2 id="消息过滤"><a href="#消息过滤" class="anchor-link">#</a>消息过滤</h2>
+<p>RocketMQ支持Tag过滤、SQL92过滤、Filter Server过滤。</p>
+<p>Broker</p>
+<h2 id="为什么写文件很快"><a href="#为什么写文件很快" class="anchor-link">#</a>为什么写文件很快</h2>
+<ul>
+<li>零拷贝和Java文件映射<br>
+java.nio.MappedByteBuffer.java文件中实现了零拷贝技术，即Java进程映射到内核态内存，原来内核态内存与用户态内存的互相拷贝过程就消失了。</li>
+</ul>
+
             </div>
-        </main>
-    
+
+            
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+    <footer class="minimal-footer">
+        
+        
+            <div class="post-category">
+                <a href="/tech/" class="post-category-link active">tech</a> | <a href="/life/" class="post-category-link">life</a>
+            </div>
+        
+        
+    </footer>
+
+
+
+        
+
+
+        
+
+
+        
+
+
+    </div>
+</main>
+
 
             
 

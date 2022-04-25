@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">sslouis</title>
     <subtitle type="html">这是 reuixiy 的生活与技术博客！怎么记住 reuixiy 呢？其实就是「一休儿」的拼音，只不过顺序是从右往左……</subtitle>
-    <updated>2022-04-20T15:02:15&#43;08:00</updated>
+    <updated>2022-04-25T11:21:02&#43;08:00</updated>
     <id>https://sslouis.com/</id>
     <link rel="alternate" type="text/html" href="https://sslouis.com/" />
     <link rel="self" type="application/atom&#43;xml" href="https://sslouis.com/atom.xml" />
@@ -241,52 +241,6 @@ TLS：Transport Layer Sercurity传输层安全&lt;/p&gt;
         </entry>
     
         <entry>
-            <title type="text">Redis</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/redis/redis/" />
-            <id>https://sslouis.com/tech/redis/redis/</id>
-            <updated>2021-01-01T17:06:53&#43;08:00</updated>
-            <published>2021-01-01T17:06:33&#43;08:00</published>
-            <author>
-                    <name>sslouis</name>
-                    <uri>https://www.sslouis.com/</uri>
-                    <email>sslouis22@gmail.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Redis数据结构</summary>
-            
-                <content type="html">&lt;h2 id=&#34;redis数据结构&#34;&gt;Redis数据结构&lt;/h2&gt;
-</content>
-            
-            
-            
-                
-                
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
-                        
-                    
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/redis/" term="redis" label="redis" />
-                        
-                    
-                
-            
-            
-            
-                
-                    
-                
-            
-        </entry>
-    
-        <entry>
             <title type="text">类文件结构</title>
             <link rel="alternate" type="text/html" href="https://sslouis.com/tech/jvm/%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" />
             <id>https://sslouis.com/tech/jvm/%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</id>
@@ -486,19 +440,23 @@ JDK6之后它是默认开启的，自旋次数的默认值是10次。&lt;br&gt;
                     <uri>https://www.sslouis.com/</uri>
                     <email>sslouis22@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Javac编译过程 1.准备过程：初始化插入式注解处理器。 2.解析与填充符号表过程： a……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Javac编译过程 Javac编译器是由Java编写的程序。 编译过程大致可以分为1个准……</summary>
             
                 <content type="html">&lt;h4 id=&#34;javac编译过程&#34;&gt;Javac编译过程&lt;/h4&gt;
-&lt;p&gt;1.准备过程：初始化插入式注解处理器。&lt;br&gt;
-2.解析与填充符号表过程：&lt;br&gt;
-a.词法、语法分析。将源代码的字符流转变为标记集合，构造出抽象语法树。
-b.填充符号表。产生符号地址和符号信息。
-3.插入式注解处理器的注解处理过程：&lt;br&gt;
-4.分析与字节码生成过程&lt;br&gt;
-a.标注检查。对语法的静态信息进行检查。
-b.数据流及控制流分析。对程序动态运行过程进行检查。
-c.解语法糖。将简化代码编写的语法糖还原为原有的形式。
-d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt;/p&gt;
+&lt;p&gt;Javac编译器是由Java编写的程序。&lt;br&gt;
+编译过程大致可以分为1个准备过程和3个处理过程：&lt;br&gt;
+1）准备过程：初始化插入式注解处理器。
+2）解析与填充符号表过程，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;词法、语法分析。将源代码的字符流转变为标记集合，构造出抽象语法树。&lt;/li&gt;
+&lt;li&gt;填充符号表。产生符号地址和符号信息。
+3）插入式注解处理器的注解处理过程。
+4）分析与字节码生成过程，包括：&lt;/li&gt;
+&lt;li&gt;标注检查。对语法的静态信息进行检查。&lt;/li&gt;
+&lt;li&gt;数据流及控制流分析。对程序动态运行过程进行检查。&lt;/li&gt;
+&lt;li&gt;解语法糖。将简化代码编写的语法糖还原为原有的形式。&lt;/li&gt;
+&lt;li&gt;字节码生成。将前面各个步骤所生成的信息转化成字节码。&lt;/li&gt;
+&lt;/ul&gt;
 </content>
             
             
@@ -547,9 +505,9 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
     
         <entry>
             <title type="text">PriorityQueue笔记</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/spring/priorityqueue/" />
-            <id>https://sslouis.com/tech/spring/priorityqueue/</id>
-            <updated>2020-12-22T13:27:22&#43;08:00</updated>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/java/priorityqueue/" />
+            <id>https://sslouis.com/tech/java/priorityqueue/</id>
+            <updated>2020-12-22T18:16:53&#43;08:00</updated>
             <published>2020-12-18T20:33:32&#43;08:00</published>
             <author>
                     <name>sslouis</name>
@@ -586,7 +544,7 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                     
                     
                         
-                            <category scheme="https://sslouis.com/tech/spring/" term="Spring" label="Spring" />
+                            <category scheme="https://sslouis.com/tech/java/" term="Java" label="Java" />
                         
                     
                 
@@ -748,106 +706,6 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
                                 <category scheme="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
                             
                         
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">Vector</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/spring/vector/" />
-            <id>https://sslouis.com/tech/spring/vector/</id>
-            <updated>2020-12-22T13:27:22&#43;08:00</updated>
-            <published>2020-11-09T00:00:00&#43;08:00</published>
-            <author>
-                    <name>sslouis</name>
-                    <uri>https://www.sslouis.com/</uri>
-                    <email>sslouis22@gmail.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Vector</summary>
-            
-                <content type="html">&lt;h2 id=&#34;vector&#34;&gt;Vector&lt;/h2&gt;
-</content>
-            
-            
-            
-                
-                
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
-                        
-                    
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/spring/" term="Spring" label="Spring" />
-                        
-                    
-                
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">MySQL逻辑架构</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/mysql/mysql1.0/" />
-            <id>https://sslouis.com/tech/mysql/mysql1.0/</id>
-            <updated>2020-12-22T13:27:22&#43;08:00</updated>
-            <published>2020-10-11T14:20:00&#43;08:00</published>
-            <author>
-                    <name>sslouis</name>
-                    <uri>https://www.sslouis.com/</uri>
-                    <email>sslouis22@gmail.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">####MySQL逻辑架构</summary>
-            
-                <content type="html">&lt;p&gt;####MySQL逻辑架构&lt;/p&gt;
-</content>
-            
-            
-            
-                
-                
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
-                        
-                    
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/mysql/" term="MySQL" label="MySQL" />
-                        
-                    
-                
-            
-            
-            
-                
                     
                 
             
@@ -1342,61 +1200,10 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
         </entry>
     
         <entry>
-            <title type="text">Javac编译器是什么？</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/javac/" />
-            <id>https://sslouis.com/tech/javac/</id>
-            <updated>2020-12-22T13:27:22&#43;08:00</updated>
-            <published>2020-09-03T13:12:27&#43;08:00</published>
-            <author>
-                    <name>sslouis</name>
-                    <uri>https://www.sslouis.com/</uri>
-                    <email>sslouis22@gmail.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Javac编译器是由Java编写的程序。 编译过程大致可以分为1个准备过程和3个处理过……</summary>
-            
-                <content type="html">&lt;p&gt;Javac编译器是由Java编写的程序。&lt;br&gt;
-编译过程大致可以分为1个准备过程和3个处理过程：&lt;br&gt;
-1）准备过程：初始化插入式注解处理器。
-2）解析与填充符号表过程，包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;词法、语法分析。将源代码的字符流转变为标记集合，构造出抽象语法树。&lt;/li&gt;
-&lt;li&gt;填充符号表。产生符号地址和符号信息。
-3）插入式注解处理器的注解处理过程。
-4）分析与字节码生成过程，包括：&lt;/li&gt;
-&lt;li&gt;标注检查。对语法的静态信息进行检查。&lt;/li&gt;
-&lt;li&gt;数据流及控制流分析。对程序动态运行过程进行检查。&lt;/li&gt;
-&lt;li&gt;解语法糖。将简化代码编写的语法糖还原为原有的形式。&lt;/li&gt;
-&lt;li&gt;字节码生成。将前面各个步骤所生成的信息转化成字节码。&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-            
-            
-            
-                
-                
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
-                        
-                    
-                
-            
-            
-            
-                
-                    
-                
-            
-        </entry>
-    
-        <entry>
             <title type="text">JVM的类加载</title>
             <link rel="alternate" type="text/html" href="https://sslouis.com/tech/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" />
             <id>https://sslouis.com/tech/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</id>
-            <updated>2020-12-22T13:29:28&#43;08:00</updated>
+            <updated>2022-04-21T20:48:04&#43;08:00</updated>
             <published>2020-08-16T21:30:32&#43;08:00</published>
             <author>
                     <name>sslouis</name>
@@ -1411,11 +1218,11 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
 &lt;h3 id=&#34;二类加载的过程&#34;&gt;二.类加载的过程&lt;/h3&gt;
 &lt;h4 id=&#34;1加载&#34;&gt;1.加载&lt;/h4&gt;
 &lt;p&gt;1）通过一个类的全限定名来获取定义此类的二进制字节流。&lt;br&gt;
-2）将这个字节流所代表的的静态 存储结构转化为方法区的运行时数据结构。&lt;br&gt;
+2）将这个字节流所代表的的静态存储结构转化为方法区的运行时数据结构。&lt;br&gt;
 3）在内存中生成一个代表这个类的java.lang.class对象，作为方法区这个类的各种数据的访问入口。&lt;br&gt;
 对于数组类而言，情况有所不同。（待补充）&lt;/p&gt;
 &lt;h4 id=&#34;2验证&#34;&gt;2.验证&lt;/h4&gt;
-&lt;p&gt;这一阶段的目的是确保Class文件的字节流中包含的信息符合《Java虚拟机规范》的全部约束条件，保证这些信息被当做代码运行后不会威海虚拟机自身的安全。&lt;br&gt;
+&lt;p&gt;这一阶段的目的是确保Class文件的字节流中包含的信息符合《Java虚拟机规范》的全部约束条件，保证这些信息被当做代码运行后不会危害虚拟机自身的安全。&lt;br&gt;
 验证阶段大致会完成下面四个阶段的检验动作：文件格式验证、元数据验证、字节码验证和符号引用验证。&lt;br&gt;
 1）文件格式验证&lt;br&gt;
 该阶段的主要目的是保证输入的字节流能正确地解析并存储于方法区之内，格式上符合描述一个Java类型信息的要求。后面的三个验证阶段全部是基于方法区的存储结构上进行的，不会再直接读取、操作字节流了。&lt;br&gt;
@@ -1424,7 +1231,7 @@ d.字节码生成。将前面各个步骤生成的信息转化成字节码。&lt
 3）字节码验证&lt;br&gt;
 通过数据流分析和控制流分析，确定程序语义是合法的、符合逻辑的。
 JDK6之后的Javac编译器和Java虚拟机里进行了一项联合优化，把尽可能多的校验辅助措施挪到Javac编译器里进行。具体做法是给方法体Code属性的属性表中新增了一项名为&amp;quot;stackMapTable&amp;quot;的新属性，描述了方法体所有的基本块。&lt;br&gt;
-4）符号引用验证
+4）符号引用验证&lt;br&gt;
 对类自身以外（常量池中的各种符号引用）的各类信息进行匹配性校验，通俗来说，该类是否缺少或者被禁止访问它依赖的某些外部类、方法、字段等资源。&lt;/p&gt;
 &lt;h4 id=&#34;3准备&#34;&gt;3.准备&lt;/h4&gt;
 &lt;p&gt;准备阶段是正式为类中定义的变量（即静态变量，被static修饰的变量）分配内存并设置类变量初始值的阶段。（初始值是数据类型的零值，赋值要到类的初始化阶段才会被执行，但是ConstantValue除外）。&lt;/p&gt;
@@ -1457,7 +1264,7 @@ Java一直保持着三层类加载器、双亲委派的类加载架构。
 &lt;li&gt;扩展类加载器（Extension Class Loader）：&lt;br&gt;
 这个类加载器是在类sun.misc.Launcher$ExtClassLoader中以Java代码的形式实现的。它负载加载&amp;lt;JAVA_HOME&amp;gt;\lib\ext目录中，或者被java.ext.dirs系统变量所制定的路径中所有的类库。&lt;/li&gt;
 &lt;li&gt;应用程序类加载器（Application Class Loader）:&lt;br&gt;
-它负责加载用户类路径（ClassPath）上所有的类库，可以再代码中使用这个类加载器。如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。&lt;/li&gt;
+它负责加载用户类路径（ClassPath）上所有的类库，可以在代码中使用这个类加载器。如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;双亲委派模型&#34;&gt;双亲委派模型&lt;/h5&gt;
 &lt;p&gt;双亲委派模型要求除了顶层的启动类加载器外，其余的类加载器都应有自己的父类加载器。父子关系不是以继承关系来实现的，而是通常使用组合关系来复用父加载器的代码。&lt;br&gt;
@@ -1465,10 +1272,10 @@ Java一直保持着三层类加载器、双亲委派的类加载架构。
 &lt;h4 id=&#34;3破坏双亲委派模型&#34;&gt;3.破坏双亲委派模型&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;第一次被破坏&lt;/li&gt;
-&lt;li&gt;第二次被破坏&lt;br&gt;
+&lt;li&gt;第二次被破坏 &lt;br&gt;
 如果有基础类型又要调用回用户的代码。&lt;br&gt;
 引入线程上下文类加载器（Thread Context ClassLoader）,通过该类父类加载器去请求子类加载器完成加载的行为。&lt;/li&gt;
-&lt;li&gt;第三次被破坏
+&lt;li&gt;第三次被破坏&lt;br&gt;
 热部署，OSGi通过类加载器实现热部署。&lt;/li&gt;
 &lt;/ul&gt;
 </content>
@@ -1654,6 +1461,73 @@ esac
                             
                             
                                 <category scheme="https://sslouis.com/tags/java/" term="Java" label="Java" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Java多线程基础</title>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/java/juc/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" />
+            <id>https://sslouis.com/tech/java/juc/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/</id>
+            <updated>2022-04-25T11:20:46&#43;08:00</updated>
+            <published>2020-08-03T22:00:21&#43;08:00</published>
+            <author>
+                    <name>sslouis</name>
+                    <uri>https://www.sslouis.com/</uri>
+                    <email>sslouis22@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"></summary>
+            
+                <content type="html"></content>
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/java/" term="Java" label="Java" />
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/java/juc/" term="JUC" label="JUC" />
+                        
+                    
+                
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://sslouis.com/tags/java/" term="Java" label="Java" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://sslouis.com/tags/juc/" term="JUC" label="JUC" />
                             
                         
                     
@@ -2031,9 +1905,9 @@ Spring MVC框架包括注解驱动控制器、请求及响应的信息处理、�
     
         <entry>
             <title type="text">HashMap笔记</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/spring/hashmap/" />
-            <id>https://sslouis.com/tech/spring/hashmap/</id>
-            <updated>2020-12-22T13:27:22&#43;08:00</updated>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/%E7%AE%97%E6%B3%95/hashmap/" />
+            <id>https://sslouis.com/tech/%E7%AE%97%E6%B3%95/hashmap/</id>
+            <updated>2022-04-22T08:22:41&#43;08:00</updated>
             <published>2020-03-04T19:54:43&#43;08:00</published>
             <author>
                     <name>sslouis</name>
@@ -2067,7 +1941,7 @@ Spring MVC框架包括注解驱动控制器、请求及响应的信息处理、�
                     
                     
                         
-                            <category scheme="https://sslouis.com/tech/spring/" term="Spring" label="Spring" />
+                            <category scheme="https://sslouis.com/tech/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
                         
                     
                 
@@ -2081,6 +1955,12 @@ Spring MVC框架包括注解驱动控制器、请求及响应的信息处理、�
                             
                             
                                 <category scheme="https://sslouis.com/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://sslouis.com/tags/java/" term="Java" label="Java" />
                             
                         
                     
@@ -2193,60 +2073,6 @@ public void setLogDao(LogDao logDao){
                             
                             
                                 <category scheme="https://sslouis.com/tags/spring/" term="Spring" label="Spring" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">TreeMap笔记</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/spring/treemap/" />
-            <id>https://sslouis.com/tech/spring/treemap/</id>
-            <updated>2020-12-22T13:27:22&#43;08:00</updated>
-            <published>2020-02-13T00:00:00&#43;08:00</published>
-            <author>
-                    <name>sslouis</name>
-                    <uri>https://www.sslouis.com/</uri>
-                    <email>sslouis22@gmail.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">TreeMap</summary>
-            
-                <content type="html">&lt;h2 id=&#34;treemap&#34;&gt;TreeMap&lt;/h2&gt;
-</content>
-            
-            
-            
-                
-                
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
-                        
-                    
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://sslouis.com/tech/spring/" term="Spring" label="Spring" />
-                        
-                    
-                
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://sslouis.com/tags/java-collections/" term="Java Collections" label="Java Collections" />
                             
                         
                     
@@ -2503,8 +2329,8 @@ Spring采用动态代理织入，AspectJ采用编译期织入和类装载期织�
     
         <entry>
             <title type="text">雪花算法</title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/" />
-            <id>https://sslouis.com/tech/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</id>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/%E7%AE%97%E6%B3%95/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/" />
+            <id>https://sslouis.com/tech/%E7%AE%97%E6%B3%95/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</id>
             <updated>2020-12-22T18:23:08&#43;08:00</updated>
             <published>2019-07-27T09:47:32&#43;08:00</published>
             <author>
@@ -2533,6 +2359,14 @@ Spring采用动态代理织入，AspectJ采用编译期织入和类装载期织�
                     
                         
                             <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
                         
                     
                 
@@ -2829,8 +2663,132 @@ AVL树查找的时间复杂度为O(logN),因为树一定是平衡的,但是,由�
     
         <entry>
             <title type="text"></title>
-            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/web/%E8%B7%B3%E8%A1%A8/" />
-            <id>https://sslouis.com/tech/web/%E8%B7%B3%E8%A1%A8/</id>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/draft/rocketmq/" />
+            <id>https://sslouis.com/tech/draft/rocketmq/</id>
+            <updated>0001-01-01T00:00:00&#43;00:00</updated>
+            <published>0001-01-01T00:00:00&#43;00:00</published>
+            <author>
+                    <name>sslouis</name>
+                    <uri>https://www.sslouis.com/</uri>
+                    <email>sslouis22@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">消费模式  集群消费模式
+一个消费者组中的消费者实例，是负载均衡（策略可以配置）地消费Topic中的消息；目前大部分场景都是适合集群消费模式，RocketMQ的消费模式默认是集群消费。 广播消费模式 消费者组中的全部消费者实例将消费整个Topic的全部信息。广播消费比较适合各个消费者实例都需要通知的场景，比如刷新应用服务器中的缓存。  可靠消息的保证  重试-死信机制 Rebalance机制
+用于在发生Broker掉线、Topic扩容和缩容、消费者扩容和缩容等变化时，自动感知并调整自身消费，以尽量减少甚至避免消息没有被消费。  消费者启动机制 DefaultMQPullConsumer DefaultMQPushConsumer 消费者的Rebalance机制 待补充
+消费进度保存机制 消费方式 消息过滤 RocketMQ支持Tag过滤、SQL92过滤、Filter Server过滤。
+Broker
+为什么写文件很快  零拷贝和Java文件映射
+java.nio.MappedByteBuffer.java文件中实现了零拷贝技术，即Java进程映射到内核态内存，原来内核态内存与用户态内存的互相拷贝过程就消失了。  </summary>
+            
+                <content type="html">&lt;h3 id=&#34;消费模式&#34;&gt;消费模式&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;集群消费模式&lt;br&gt;
+一个消费者组中的消费者实例，是负载均衡（策略可以配置）地消费Topic中的消息；目前大部分场景都是适合集群消费模式，RocketMQ的消费模式默认是集群消费。&lt;/li&gt;
+&lt;li&gt;广播消费模式
+消费者组中的全部消费者实例将消费整个Topic的全部信息。广播消费比较适合各个消费者实例都需要通知的场景，比如刷新应用服务器中的缓存。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;可靠消息的保证&#34;&gt;可靠消息的保证&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;重试-死信机制&lt;/li&gt;
+&lt;li&gt;Rebalance机制&lt;br&gt;
+用于在发生Broker掉线、Topic扩容和缩容、消费者扩容和缩容等变化时，自动感知并调整自身消费，以尽量减少甚至避免消息没有被消费。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;消费者启动机制&#34;&gt;消费者启动机制&lt;/h2&gt;
+&lt;h3 id=&#34;defaultmqpullconsumer&#34;&gt;DefaultMQPullConsumer&lt;/h3&gt;
+&lt;h3 id=&#34;defaultmqpushconsumer&#34;&gt;DefaultMQPushConsumer&lt;/h3&gt;
+&lt;h2 id=&#34;消费者的rebalance机制&#34;&gt;消费者的Rebalance机制&lt;/h2&gt;
+&lt;p&gt;待补充&lt;/p&gt;
+&lt;h2 id=&#34;消费进度保存机制&#34;&gt;消费进度保存机制&lt;/h2&gt;
+&lt;h2 id=&#34;消费方式&#34;&gt;消费方式&lt;/h2&gt;
+&lt;h2 id=&#34;消息过滤&#34;&gt;消息过滤&lt;/h2&gt;
+&lt;p&gt;RocketMQ支持Tag过滤、SQL92过滤、Filter Server过滤。&lt;/p&gt;
+&lt;p&gt;Broker&lt;/p&gt;
+&lt;h2 id=&#34;为什么写文件很快&#34;&gt;为什么写文件很快&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;零拷贝和Java文件映射&lt;br&gt;
+java.nio.MappedByteBuffer.java文件中实现了零拷贝技术，即Java进程映射到内核态内存，原来内核态内存与用户态内存的互相拷贝过程就消失了。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
+                        
+                    
+                
+                    
+                    
+                    
+                
+            
+            
+            
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text"></title>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/mysql/mysql%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/" />
+            <id>https://sslouis.com/tech/mysql/mysql%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</id>
+            <updated>0001-01-01T00:00:00&#43;00:00</updated>
+            <published>0001-01-01T00:00:00&#43;00:00</published>
+            <author>
+                    <name>sslouis</name>
+                    <uri>https://www.sslouis.com/</uri>
+                    <email>sslouis22@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">未提交读 提交读 可重复读 可串行化</summary>
+            
+                <content type="html">&lt;p&gt;未提交读
+提交读
+可重复读
+可串行化&lt;/p&gt;
+</content>
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/mysql/" term="MySQL" label="MySQL" />
+                        
+                    
+                
+            
+            
+            
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text"></title>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/%E7%AE%97%E6%B3%95/%E8%B7%B3%E8%A1%A8/" />
+            <id>https://sslouis.com/tech/%E7%AE%97%E6%B3%95/%E8%B7%B3%E8%A1%A8/</id>
             <updated>0001-01-01T00:00:00&#43;00:00</updated>
             <published>0001-01-01T00:00:00&#43;00:00</published>
             <author>
@@ -3233,23 +3191,6 @@ public static void main(String[] args) {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;}
 进行测试一下可以发现跳表还是挺完美的(自夸一下)。你是不是非常想跳一下试试！&lt;/p&gt;
-&lt;p&gt;图片
-推荐阅读&lt;/p&gt;
-&lt;p&gt;面试官本想拿一道求素数搞我，但被我优雅的&amp;quot;回击&amp;quot;了
-是时候捋一捋Java的深浅拷贝了
-「干货总结」程序员必知必会的十大排序算法
-花5分钟看这篇之前,你才发现你不懂RESTful
-「五大常用算法」一文图解分治算法和思想
-欢迎关注、转发、在看分享，咱们下次再见！
-bigsai
-bigsai
-专注于数据结构与算法、Java知识分享，让学习更加简单！
-126篇原创内容
-公众号
-阅读 535
-赞8
-在看7
-：，。视频小程序赞，轻点两下取消赞在看，轻点两下取消在看&lt;/p&gt;
 </content>
             
             
@@ -3269,7 +3210,7 @@ bigsai
                     
                     
                         
-                            <category scheme="https://sslouis.com/tech/web/" term="web" label="web" />
+                            <category scheme="https://sslouis.com/tech/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
                         
                     
                 
@@ -3317,6 +3258,53 @@ bigsai
                     
                         
                             <category scheme="https://sslouis.com/tech/java/" term="Java" label="Java" />
+                        
+                    
+                
+            
+            
+            
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">MySQL逻辑架构</title>
+            <link rel="alternate" type="text/html" href="https://sslouis.com/tech/mysql/mysql1.0/" />
+            <id>https://sslouis.com/tech/mysql/mysql1.0/</id>
+            <updated>2020-12-22T13:27:22&#43;08:00</updated>
+            <published>0001-01-01T00:00:00&#43;00:00</published>
+            <author>
+                    <name>sslouis</name>
+                    <uri>https://www.sslouis.com/</uri>
+                    <email>sslouis22@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">####MySQL逻辑架构 待补充</summary>
+            
+                <content type="html">&lt;p&gt;####MySQL逻辑架构
+待补充&lt;/p&gt;
+</content>
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/" term="tech" label="tech" />
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://sslouis.com/tech/mysql/" term="MySQL" label="MySQL" />
                         
                     
                 

@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-08-16T21:30:32+08:00",
-        "dateModified": "2020-12-22T13:29:28+08:00",
+        "dateModified": "2022-04-21T20:48:04+08:00",
         "url": "https://sslouis.com/tech/jvm/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/",
         "headline": "JVM的类加载",
         "description": "一.类加载的时机 一个类型从被加载到虚拟机内存中开始，到卸载出内存位置，它的整个生命周……",
@@ -103,7 +103,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://sslouis.com/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-08-16T21:30:32&#43;08:00" />
-    <meta property="article:modified_time" content="2020-12-22T13:29:28&#43;08:00" />
+    <meta property="article:modified_time" content="2022-04-21T20:48:04&#43;08:00" />
     
     <meta property="article:section" content="tech" />
 
@@ -231,11 +231,11 @@
 <h3 id="二类加载的过程"><a href="#二类加载的过程" class="anchor-link">#</a>二.类加载的过程</h3>
 <h4 id="1加载"><a href="#1加载" class="anchor-link">#</a>1.加载</h4>
 <p>1）通过一个类的全限定名来获取定义此类的二进制字节流。<br>
-2）将这个字节流所代表的的静态 存储结构转化为方法区的运行时数据结构。<br>
+2）将这个字节流所代表的的静态存储结构转化为方法区的运行时数据结构。<br>
 3）在内存中生成一个代表这个类的java.lang.class对象，作为方法区这个类的各种数据的访问入口。<br>
 对于数组类而言，情况有所不同。（待补充）</p>
 <h4 id="2验证"><a href="#2验证" class="anchor-link">#</a>2.验证</h4>
-<p>这一阶段的目的是确保Class文件的字节流中包含的信息符合《Java虚拟机规范》的全部约束条件，保证这些信息被当做代码运行后不会威海虚拟机自身的安全。<br>
+<p>这一阶段的目的是确保Class文件的字节流中包含的信息符合《Java虚拟机规范》的全部约束条件，保证这些信息被当做代码运行后不会危害虚拟机自身的安全。<br>
 验证阶段大致会完成下面四个阶段的检验动作：文件格式验证、元数据验证、字节码验证和符号引用验证。<br>
 1）文件格式验证<br>
 该阶段的主要目的是保证输入的字节流能正确地解析并存储于方法区之内，格式上符合描述一个Java类型信息的要求。后面的三个验证阶段全部是基于方法区的存储结构上进行的，不会再直接读取、操作字节流了。<br>
@@ -244,7 +244,7 @@
 3）字节码验证<br>
 通过数据流分析和控制流分析，确定程序语义是合法的、符合逻辑的。
 JDK6之后的Javac编译器和Java虚拟机里进行了一项联合优化，把尽可能多的校验辅助措施挪到Javac编译器里进行。具体做法是给方法体Code属性的属性表中新增了一项名为&quot;stackMapTable&quot;的新属性，描述了方法体所有的基本块。<br>
-4）符号引用验证
+4）符号引用验证<br>
 对类自身以外（常量池中的各种符号引用）的各类信息进行匹配性校验，通俗来说，该类是否缺少或者被禁止访问它依赖的某些外部类、方法、字段等资源。</p>
 <h4 id="3准备"><a href="#3准备" class="anchor-link">#</a>3.准备</h4>
 <p>准备阶段是正式为类中定义的变量（即静态变量，被static修饰的变量）分配内存并设置类变量初始值的阶段。（初始值是数据类型的零值，赋值要到类的初始化阶段才会被执行，但是ConstantValue除外）。</p>
@@ -277,7 +277,7 @@ Java一直保持着三层类加载器、双亲委派的类加载架构。
 <li>扩展类加载器（Extension Class Loader）：<br>
 这个类加载器是在类sun.misc.Launcher$ExtClassLoader中以Java代码的形式实现的。它负载加载&lt;JAVA_HOME&gt;\lib\ext目录中，或者被java.ext.dirs系统变量所制定的路径中所有的类库。</li>
 <li>应用程序类加载器（Application Class Loader）:<br>
-它负责加载用户类路径（ClassPath）上所有的类库，可以再代码中使用这个类加载器。如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。</li>
+它负责加载用户类路径（ClassPath）上所有的类库，可以在代码中使用这个类加载器。如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。</li>
 </ul>
 <h5 id="双亲委派模型"><a href="#双亲委派模型" class="anchor-link">#</a>双亲委派模型</h5>
 <p>双亲委派模型要求除了顶层的启动类加载器外，其余的类加载器都应有自己的父类加载器。父子关系不是以继承关系来实现的，而是通常使用组合关系来复用父加载器的代码。<br>
@@ -285,10 +285,10 @@ Java一直保持着三层类加载器、双亲委派的类加载架构。
 <h4 id="3破坏双亲委派模型"><a href="#3破坏双亲委派模型" class="anchor-link">#</a>3.破坏双亲委派模型</h4>
 <ul>
 <li>第一次被破坏</li>
-<li>第二次被破坏<br>
+<li>第二次被破坏 <br>
 如果有基础类型又要调用回用户的代码。<br>
 引入线程上下文类加载器（Thread Context ClassLoader）,通过该类父类加载器去请求子类加载器完成加载的行为。</li>
-<li>第三次被破坏
+<li>第三次被破坏<br>
 热部署，OSGi通过类加载器实现热部署。</li>
 </ul>
 
